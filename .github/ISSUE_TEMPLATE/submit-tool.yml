@@ -1,0 +1,75 @@
+name: "Submit a Tool"
+description: "Submit a new AI coding tool, local model, or agentic framework to the catalog"
+title: "Add [Tool Name]: [Brief Description]"
+labels: ["tool-submission", "community"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Thank you for proposing a tool for **Awesome AI Coding Tools**!
+        Please fill out this form. Qualifying tools are reviewed and merged within 24 hours.
+
+  - type: input
+    id: tool_name
+    attributes:
+      label: Tool Name
+      placeholder: "e.g. Trae, Goose, Qwen3-Coder"
+    validations:
+      required: true
+
+  - type: input
+    id: tool_url
+    attributes:
+      label: Repository or Website URL
+      placeholder: "https://github.com/org/repo or https://tool.com"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Target Category / Skill Tier
+      options:
+        - "Level 1: Standalone Agentic IDEs"
+        - "Level 1: 1-Click Editor Extensions"
+        - "Level 2: Terminal & CLI Pair Programmers"
+        - "Level 2: Running Agents in Parallel"
+        - "Level 2: MCP Servers for Coding"
+        - "Level 2: Top Open-Weight Coding Models"
+        - "Level 2: Local Execution Engines"
+        - "Level 2: Automated Testing, QA & Code Review"
+        - "Level 3: Autonomous Software Engineers (SWE-bench)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: tool_description
+    attributes:
+      label: Short Description (1-2 sentences)
+      placeholder: "Clear description focusing on technical functionality and developer advantage."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: license_type
+    attributes:
+      label: License / Availability
+      options:
+        - "Open Source (MIT / Apache / GPL)"
+        - "Open Weights (Apache / Creative Commons / Custom Open)"
+        - "Free / Freemium"
+        - "Proprietary / Commercial"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Verification Checklist
+      options:
+        - label: "The tool is active and actively maintained."
+          required: true
+        - label: "The URL uses HTTPS."
+          required: true
+        - label: "I have starred or bookmarked this repository."
+          required: false

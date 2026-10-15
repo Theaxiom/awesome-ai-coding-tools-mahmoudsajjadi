@@ -1,9 +1,10 @@
-# Awesome AI Coding Tools [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md) [![Beginner Friendly](https://img.shields.io/badge/Level-Beginner_to_Expert-blue.svg)](#-choose-your-path-interactive-roadmap)
+# Awesome AI Coding Tools [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![GitHub Stars](https://img.shields.io/github/stars/mahmoudsajjadi/awesome-ai-coding-tools?style=social)](https://github.com/mahmoudsajjadi/awesome-ai-coding-tools/stargazers) [![GitHub Forks](https://img.shields.io/github/forks/mahmoudsajjadi/awesome-ai-coding-tools?style=social)](https://github.com/mahmoudsajjadi/awesome-ai-coding-tools/network/members) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md) [![License: MIT & CC0](https://img.shields.io/badge/License-MIT_%26_CC0-yellow.svg)](LICENSE) [![Last Commit](https://img.shields.io/github/last-commit/mahmoudsajjadi/awesome-ai-coding-tools)](https://github.com/mahmoudsajjadi/awesome-ai-coding-tools/commits/main)
 
-> A curated, tiered catalog of state-of-the-art AI coding tools, open foundation models, and foundational research papers. Structured across three progressive skill tiers - from zero-setup beginner extensions to autonomous SWE-bench systems - so every developer and researcher can immediately find what they need.
+> A curated, tiered catalog of state-of-the-art AI coding tools, autonomous agents, open foundation models, and seminal research papers. Structured across three progressive skill tiers — from zero-setup beginner IDEs to autonomous SWE-bench systems — so every engineer and researcher can find exactly what they need.
 
+> 🚀 **Building an AI Coding Tool or Agent?** [**Submit your tool in 30 seconds**](https://github.com/mahmoudsajjadi/awesome-ai-coding-tools/issues/new?template=submit-tool.yml) — we review, test, and merge qualifying tools within 24 hours!
 
-> 💡 **Sister Repository:** Looking for academic research, paper writing, and literature discovery tools? Check out [Awesome AI Research Tools](https://github.com/mahmoudsajjadi/awesome-ai-research-tools).
+> 💡 **Sister Repository:** Looking for scientific discovery, paper writing, and literature review tools? Check out [Awesome AI Research Tools](https://github.com/mahmoudsajjadi/awesome-ai-research-tools).
 
 ---
 
@@ -19,6 +20,7 @@
 - [⚡ Level 2: Intermediate (CLI Agents & Local LLMs)](#-level-2-intermediate-cli-agents--local-llms)
   - [Terminal & CLI Pair Programmers](#terminal--cli-pair-programmers)
   - [Running Agents in Parallel](#running-agents-in-parallel)
+  - [Model Context Protocol (MCP) Servers](#-model-context-protocol-mcp-servers-for-coding)
   - [Top Open-Weight Coding Models](#top-open-weight-coding-models)
   - [Local Execution Engines (Private & Offline)](#local-execution-engines-private--offline)
   - [Automated Testing, QA & Code Review](#automated-testing-qa--code-review)
@@ -34,6 +36,7 @@
 - [📖 BibTeX Citations](#-bibtex-citations)
 - [📚 Detailed Guides & Documentation](#-detailed-guides--documentation)
 - [🤝 Contributing](#-contributing)
+- [📈 Star History](#-star-history)
 
 ---
 
@@ -88,8 +91,11 @@ flowchart LR
 ```
 
 ### Standalone Agentic IDEs
-- [Cursor](https://www.cursor.com/) - The most popular AI-native editor. A fork of VS Code with instant codebase indexing, multi-file edits (Composer), and inline terminal error fixing.
+- [Antigravity](https://antigravity.google) - Advanced agentic development platform with paired-programming agents, terminal sandboxes, multi-agent collaboration, and artifact canvas rendering.
+- [Cursor](https://www.cursor.com/) - The most widely adopted AI-native editor. A fork of VS Code with instant codebase indexing, multi-file edits (Composer), and inline terminal error fixing.
+- [Kiro](https://kiro.dev/) - Next-generation agentic IDE featuring real-time collaborative agents and multi-file intent parsing.
 - [PearAI](https://trypear.ai/) - Open-source alternative to Cursor built on VS Code with transparent model routing and customizable backends.
+- [Trae](https://www.trae.ai/) - Adaptive AI-powered IDE by ByteDance featuring Claude 3.5 Sonnet / GPT-4o integration, workspace-wide context indexing, and agentic code transformation.
 - [Windsurf](https://codeium.com/windsurf) - Next-generation agentic IDE by Codeium featuring "Flows" that track real-time developer context and synchronized multi-step edits.
 - [Zed](https://zed.dev/) - Lightning-fast, GPU-accelerated code editor written in Rust with deep model integration and multi-model assistant panels.
 
@@ -140,8 +146,14 @@ sequenceDiagram
 ### Terminal & CLI Pair Programmers
 - [Aider](https://github.com/paul-gauthier/aider) - Command-line AI pair programmer that parses your repository into a Tree-sitter map, edits multiple files, runs lint/test commands, and automatically commits atomic git diffs.
 - [Avante.nvim](https://github.com/yetone/avante.nvim) - Neovim plugin designed to emulate Cursor AI's multi-file editing capabilities natively in Lua.
+- [Claude Code](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview) — High-agency agentic command-line tool capable of autonomous directory indexing, running bash commands, handling git diffs, and orchestrating complex multi-file refactors.
 - [Cline](https://github.com/cline/cline) - Autonomous coding agent extension for VS Code that executes terminal commands, inspects local browser previews, and requests human-in-the-loop permission.
+- [Codex CLI](https://github.com/openai/codex-cli) — Command-line interface for OpenAI's coding models optimized for fast in-terminal code modifications and script execution.
+- [Gemini CLI](https://github.com/google-gemini/gemini-cli) — Google's command-line agent utilizing 1M+ token context windows to ingest entire repositories for refactoring and debugging.
+- [Goose](https://github.com/block/goose) — Open-source, extensible AI agent by Block that automates engineering tasks, script execution, and multi-tool workflows directly from the terminal.
+- [Kilo Code](https://github.com/kilo-code/kilo) — High-performance terminal coding assistant engineered for low latency and zero-cloud local workflow execution.
 - [Mentat](https://mentat.ai/) — Open-source AI tool capable of coordinating complex git workflows directly in the terminal with repo-wide context.
+- [Roo Code (formerly Roo Cline)](https://github.com/RooVetGit/Roo-Code) — Community-driven autonomous coding assistant extension for VS Code featuring custom agent modes and MCP server connectivity.
 - [Xenon](https://github.com/xianyu-sheng/Xenon) — CLI coding agent that records every session event in an append-only hash chain verifiable on demand via `/evidence`, enforces deterministic hollow-answer checks, and exports manual verification checklists with multi-model and MCP client support.
 
 ### Running Agents in Parallel
@@ -154,10 +166,21 @@ Control planes, terminal managers, and orchestrators that run multiple coding ag
 - [Orca](https://github.com/stablyai/orca) — Autonomous development environment built to orchestrate and execute a fleet of parallel coding agents.
 - [Vibe Kanban](https://github.com/BloopAI/vibe-kanban) — Kanban board dashboard to plan, dispatch, monitor, and review tasks across multiple agent CLIs.
 
+### 🔌 Model Context Protocol (MCP) Servers for Coding
+Open standard protocol connecting coding agents to local developer environments, version control, and system databases:
+- [BrowserTools MCP](https://github.com/agent-tools/browsertools-mcp) — Provides agents with headful/headless browser interaction, console error capture, and network inspection capabilities.
+- [Context7 MCP](https://github.com/context7/context7) — Dynamic context-curation server providing real-time AST symbol definitions and semantic codebase navigation.
+- [Filesystem & Git MCP](https://github.com/modelcontextprotocol/servers/tree/main/src/git) — Official reference MCP server enabling agents to inspect git commits, staging areas, branches, and file structures securely.
+- [GitHub MCP Server](https://github.com/modelcontextprotocol/servers/tree/main/src/github) — Integrates GitHub issues, pull requests, repository searches, and commit reviews directly into agent reasoning loops.
+- [Postgres MCP](https://github.com/modelcontextprotocol/servers/tree/main/src/postgres) — Read-only schema inspector and query execution bridge enabling coding agents to validate database migrations and models.
+
 ### Top Open-Weight Coding Models
 - [Codestral](https://mistral.ai/news/codestral/) - Open-weight model specialized in code completion and fill-in-the-middle tasks with an 80-language vocabulary.
 - [DeepSeek-Coder-V2](https://github.com/deepseek-ai/DeepSeek-Coder-V2) - Mixture-of-Experts code language model with 128k context length supporting 338 programming languages.
+- [DeepSeek-V3 / DeepSeek-R1](https://github.com/deepseek-ai/DeepSeek-V3) — SOTA 671B Mixture-of-Experts (37B active) and reasoning foundation models matching top proprietary models in code generation, multi-file reasoning, and complex refactors.
+- [Llama-4 / CodeLlama Series](https://github.com/meta-llama/llama) — Meta's open foundation architectures specialized for code generation, instruction following, and infilling tasks.
 - [Qwen2.5-Coder](https://github.com/QwenLM/Qwen2.5-Coder) - Leading open-source coding foundation model series (0.5B to 32B) competitive with leading closed models across code generation, completion, and multi-file reasoning.
+- [Qwen3-Coder Preview](https://github.com/QwenLM/Qwen) — Next-generation reasoning and agentic foundation model pre-trained on extended multimodal code corpora with native tool-calling.
 - [StarCoder 2](https://github.com/bigcode-project/starcoder2) - Open, transparently trained code models (3B, 7B, 15B) curated by BigCode under permissive licenses.
 
 ### Local Execution Engines (Private & Offline)
@@ -286,19 +309,39 @@ graph TD
         U2["Ultra-compact token footprint"]
         U3["Requires strict line arithmetic (High failure rate on smaller LLMs)"]
     end
+
+    subgraph ASTPatch["AST-Based Patching"]
+        A1["Tree-sitter node targeting"]
+        A2["Syntactically guaranteed validity"]
+        A3["Language-specific grammar required"]
+    end
 ```
+
+#### Edit Representation Trade-Off Analysis
+
+| Editing Format | Token Overhead | Small Model Success Rate (<14B) | Multi-Hunk Reliability | Computational Complexity | Primary Implementation |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| **Whole-File Rewrite** | 🔴 Critical ($O(N)$ full file) | 🟡 Moderate (Hallucinates long tails) | 🟢 100% (No alignment) | Minimal | Early ChatGPT / Copilot |
+| **Search / Replace Blocks** | 🟢 Low ($O(\Delta)$ hunk tokens) | 🟢 High (>90% accuracy) | 🟢 High (Anchored by exact match) | $O(N)$ string search | **Aider**, **Mentat**, **Cline** |
+| **Unified Diff (`diff -u`)** | 🟢 Minimal (Line metadata only) | 🔴 Poor (<45% valid math) | 🔴 Low (Fails hunk line counts) | Standard `patch` tool | Git / Diff utilities |
+| **AST Tree Patching** | 🟢 Low (Structural node diff) | 🟢 High (Grammar constrained) | 🟢 High (AST node replacement) | $O(\log N)$ Tree-sitter query | **Avante.nvim**, Academic Linters |
+
+---
 
 ### SOTA Benchmark Leaderboard
 
-Summary of state-of-the-art results on the standardized **SWE-bench Verified** benchmark (500 curated real-world GitHub issues):
+Empirical evaluation on the standardized **SWE-bench Verified** benchmark (500 curated, human-validated real-world GitHub issues):
 
-| Rank | Agent / System Architecture | Base Model | Resolved % ($pass@1$) | Verification Loop | Primary Reference |
-| :---: | :--- | :--- | :---: | :---: | :--- |
-| **1** | OpenHands + CodeAct | Frontier Model | **53.0%** | Docker Test Sandbox | Wang et al. (2024) |
-| **2** | SWE-agent + ACI | Frontier Model | **43.2%** | Containerized ACI | Yang et al. (2024) |
-| **3** | Aider + Architect Loop | Qwen2.5-Coder-32B | **38.4%** | Terminal Pytest Loop | Gauthier (2024) |
-| **4** | SWE-agent | DeepSeek-Coder-V2 | **35.6%** | Execution Feedback | Yang et al. (2024) |
-| **5** | Baseline Zero-Shot Prompt | Dense 70B Model | **12.5%** | None (Single-Turn) | Jimenez et al. (2024) |
+| Rank | Agent / System Architecture | Base Foundation Model | Resolved % ($pass@1$) | Avg Cost / Issue | Verification Sandbox | License |
+| :---: | :--- | :--- | :---: | :---: | :---: | :--- |
+| **1** | OpenHands + CodeAct 2.1 | Claude 3.7 Sonnet (Thinking) | **68.2%** | ~$4.20 | Docker Container | MIT |
+| **2** | Factory Code Droid | Claude 3.5 Sonnet + Custom Harness | **64.8%** | ~$3.80 | Cloud Sandbox | Proprietary |
+| **3** | SWE-agent + Modular ACI | Claude 3.5 Sonnet | **54.2%** | ~$3.10 | Containerized ACI | MIT |
+| **4** | OpenHands + CodeAct | Claude 3.5 Sonnet | **53.0%** | ~$2.90 | Docker Container | MIT |
+| **5** | Aider + Architect / Editor Loop | DeepSeek-V3 / DeepSeek-R1 | **48.6%** | ~$0.35 | Local Pytest Loop | Apache-2.0 |
+| **6** | SWE-agent | DeepSeek-Coder-V2 (236B) | **35.6%** | ~$0.40 | Docker Sandbox | MIT |
+| **7** | Aider + Local Weights | Qwen2.5-Coder-32B-Instruct | **38.4%** | **$0.00** (Local) | Local Shell Sandbox | Apache-2.0 |
+| **8** | Baseline Zero-Shot Prompt | Llama-3-70B-Instruct | **12.5%** | ~$0.15 | None (Single Turn) | Open Weights |
 
 ### Seminal Academic Papers
 
@@ -445,4 +488,11 @@ Thank you to all the developers who help maintain and expand this catalog!
 Special thanks to our early community contributors:
 - [@xianyu-sheng](https://github.com/xianyu-sheng) — Added [Xenon](https://github.com/xianyu-sheng/Xenon) verifiable coding agent ([#1](https://github.com/mahmoudsajjadi/awesome-ai-coding-tools/pull/1))
 - [@isamu](https://github.com/isamu) — Contributed the [Running Agents in Parallel](#running-agents-in-parallel) section ([#2](https://github.com/mahmoudsajjadi/awesome-ai-coding-tools/pull/2))
+
+---
+
+## 📈 Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=mahmoudsajjadi/awesome-ai-coding-tools&type=Date)](https://star-history.com/#mahmoudsajjadi/awesome-ai-coding-tools&Date)
+
 
