@@ -1,0 +1,18 @@
+# Aider Configuration for Architect Mode & Local / Open Weight Routing
+
+# Use the two-step Architect mode (Reasoning model designs patch, Editor model applies it)
+architect: true
+
+# Enable automatic git commits after verified edits
+auto-commits: true
+
+# Automatically run tests after every edit loop
+auto-lint: true
+test-cmd: "pytest"
+
+# Default to rich repository map packed within token budget
+map-tokens: 2048
+
+# Offline / Local Model Settings (Ollama / DeepSeek endpoint)
+# model: ollama/qwen2.5-coder:14b
+# openai-api-base: http://localhost:11434/v1

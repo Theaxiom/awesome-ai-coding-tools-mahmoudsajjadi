@@ -1,0 +1,10 @@
+# Windsurf Cascade Rules: Context Flow & Editing Directives
+
+### Context Flow Rules
+- Ground all modifications in the project's existing architectural patterns.
+- Read neighboring modules and configuration files before modifying imports.
+- Prioritize minimal diff surfaces over cosmetic refactoring.
+
+### Execution Standard
+- Verify code compilation and test status after every flow step.
+- On syntax or type errors, revert to the nearest working state and re-evaluate AST constraints.

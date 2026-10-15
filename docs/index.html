@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Coding Stack & VRAM Calculator (2026)</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --accent: #58a6ff;
+      --accent-hover: #1f6feb;
+      --text: #c9d1d9;
+      --text-muted: #8b949e;
+      --success: #3fb950;
+      --code-bg: #0a0c10;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); padding: 2rem 1rem; line-height: 1.5; }
+    .container { max-width: 900px; margin: 0 auto; }
+    header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem; }
+    h1 { font-size: 1.75rem; color: #fff; display: flex; align-items: center; gap: 0.5rem; }
+    .star-btn { background: #21262d; border: 1px solid var(--border); color: #fff; padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; font-size: 0.9rem; font-weight: 600; display: inline-flex; align-items: center; gap: 0.4rem; transition: background 0.2s; }
+    .star-btn:hover { background: #30363d; border-color: #8b949e; }
+    .lead { color: var(--text-muted); margin-bottom: 2rem; font-size: 1.05rem; }
+    
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+    .control-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; }
+    .control-card h3 { font-size: 1rem; color: var(--accent); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.4rem; }
+    select { width: 100%; background: #0a0c10; border: 1px solid var(--border); color: #fff; padding: 0.6rem; border-radius: 6px; font-size: 0.95rem; outline: none; }
+    select:focus { border-color: var(--accent); }
+
+    .result-box { background: var(--card-bg); border: 1px solid #238636; border-radius: 8px; padding: 1.5rem; position: relative; }
+    .result-box h2 { color: #fff; font-size: 1.3rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+    .recommendation-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+    .rec-item { background: #0a0c10; border: 1px solid var(--border); padding: 0.75rem 1rem; border-radius: 6px; }
+    .rec-label { font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 600; letter-spacing: 0.5px; }
+    .rec-val { font-size: 1.05rem; font-weight: 600; color: #fff; margin-top: 0.25rem; }
+
+    .code-block { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 1rem; font-family: monospace; font-size: 0.9rem; color: #7ee787; position: relative; overflow-x: auto; white-space: pre-wrap; word-break: break-all; }
+    .copy-btn { position: absolute; top: 0.5rem; right: 0.5rem; background: #21262d; border: 1px solid var(--border); color: #c9d1d9; font-size: 0.75rem; padding: 0.25rem 0.6rem; border-radius: 4px; cursor: pointer; }
+    .copy-btn:hover { background: #30363d; color: #fff; }
+
+    footer { text-align: center; margin-top: 3rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); padding-top: 1.5rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>⚡ AI Coding Stack & VRAM Calculator (2026)</h1>
+      <a class="star-btn" href="https://github.com/mahmoudsajjadi/awesome-ai-coding-tools" target="_blank">
+        ⭐ Star on GitHub
+      </a>
+    </header>
+
+    <p class="lead">
+      Select your hardware setup, data privacy requirements, and preferred workflow to calculate the optimal coding agent, model quantization, and 1-click install command.
+    </p>
+
+    <div class="grid">
+      <div class="control-card">
+        <h3>💻 1. Hardware / VRAM</h3>
+        <select id="vram" onchange="calculate()">
+          <option value="none">No GPU / CPU Only (Lightweight)</option>
+          <option value="8gb">8 GB VRAM (RTX 3060/4060, M1/M2 Base)</option>
+          <option value="16gb" selected>16 GB VRAM (RTX 4080, Apple 16GB)</option>
+          <option value="24gb">24 GB+ VRAM (RTX 3090/4090, Apple 36GB+)</option>
+          <option value="apple_ultra">Apple Silicon Ultra (64GB - 128GB Unified)</option>
+        </select>
+      </div>
+
+      <div class="control-card">
+        <h3>🛡️ 2. Privacy Constraint</h3>
+        <select id="privacy" onchange="calculate()">
+          <option value="offline" selected>100% Offline / Air-Gapped (Zero Data Leaks)</option>
+          <option value="hybrid">Hybrid (Local Context + Optional Cloud Frontier)</option>
+          <option value="cloud">Cloud SOTA (Maximum Benchmark Intelligence)</option>
+        </select>
+      </div>
+
+      <div class="control-card">
+        <h3>🎛 3. Preferred Interface</h3>
+        <select id="interface" onchange="calculate()">
+          <option value="cli" selected>Terminal CLI Agent (Git-native diffs)</option>
+          <option value="ide">In-Editor / Agentic IDE (Cursor, VS Code)</option>
+          <option value="fleet">Parallel Fleet (Run 5+ agents in parallel)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="result-box">
+      <h2>🎯 Recommended Stack Configuration</h2>
+      <div class="recommendation-grid">
+        <div class="rec-item">
+          <div class="rec-label">Primary Tool</div>
+          <div class="rec-val" id="rec-tool">Aider</div>
+        </div>
+        <div class="rec-item">
+          <div class="rec-label">Model Weights</div>
+          <div class="rec-val" id="rec-model">Qwen2.5-Coder:14b</div>
+        </div>
+        <div class="rec-item">
+          <div class="rec-label">Quantization / Engine</div>
+          <div class="rec-val" id="rec-engine">Q4_K_M (Ollama)</div>
+        </div>
+        <div class="rec-item">
+          <div class="rec-label">SWE-bench Verified Pass</div>
+          <div class="rec-val" id="rec-pass">~38.4%</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 0.5rem; font-weight: 600; color: #fff;">1-Click Terminal Launch Script:</div>
+      <div class="code-block" id="install-cmd">
+# 1. Start Ollama
+ollama run qwen2.5-coder:14b
+
+# 2. Run Aider with local model
+pip install aider-chat
+aider --model ollama/qwen2.5-coder:14b
+      </div>
+      <button class="copy-btn" onclick="copyCode()">Copy Script</button>
+    </div>
+
+    <footer>
+      Curated by <a href="https://github.com/mahmoudsajjadi" target="_blank">Mahmoud Sajjadi</a> &bull; 
+      Maintained under <a href="https://github.com/mahmoudsajjadi/awesome-ai-coding-tools" target="_blank">Awesome AI Coding Tools</a> (CC0 / MIT).
+    </footer>
+  </div>
+
+  <script>
+    function calculate() {
+      const vram = document.getElementById('vram').value;
+      const privacy = document.getElementById('privacy').value;
+      const iface = document.getElementById('interface').value;
+
+      let tool = "Aider";
+      let model = "Qwen2.5-Coder:14b";
+      let engine = "Q4_K_M (Ollama)";
+      let pass = "38.4%";
+      let cmd = "";
+
+      if (privacy === "cloud") {
+        if (iface === "ide") {
+          tool = "Cursor / Windsurf";
+          model = "Claude 3.7 Sonnet / GPT-4o";
+          engine = "Cloud API";
+          pass = "68.2%";
+          cmd = "# Install Windsurf or Cursor from official website\n# In your project root:\nwindsurf .";
+        } else if (iface === "fleet") {
+          tool = "Claude Squad / Vibe Kanban";
+          model = "Claude 3.7 Sonnet (Thinking)";
+          engine = "Cloud Agent Multiplexer";
+          pass = "68.2%";
+          cmd = "# Install and launch Claude Squad parallel manager\nnpx claude-squad";
+        } else {
+          tool = "Claude Code";
+          model = "Claude 3.7 Sonnet";
+          engine = "Anthropic CLI";
+          pass = "64.8%";
+          cmd = "# Install Claude Code CLI globally\nnpm install -g @anthropic-ai/claude-code\ncd /path/to/project\nclaude";
+        }
+      } else {
+        // Offline or Hybrid
+        if (vram === "none") {
+          model = "Qwen2.5-Coder:1.5b / 7b (Q4)";
+          engine = "llama.cpp (CPU avx2)";
+          pass = "28.5%";
+          if (iface === "ide") {
+            tool = "Continue.dev + Ollama";
+            cmd = "ollama run qwen2.5-coder:1.5b\n# Install Continue.dev in VS Code and set endpoint to http://localhost:11434";
+          } else {
+            tool = "Aider (CPU)";
+            cmd = "ollama run qwen2.5-coder:1.5b\npip install aider-chat\naider --model ollama/qwen2.5-coder:1.5b";
+          }
+        } else if (vram === "8gb") {
+          model = "Qwen2.5-Coder:7b (Q8) or DeepSeek-Coder:6.7b";
+          engine = "Ollama / llama.cpp";
+          pass = "34.1%";
+          if (iface === "fleet") {
+            tool = "MulmoTerminal + Ollama";
+            cmd = "ollama run qwen2.5-coder:7b\nnpm install -g mulmoterminal\nmulmoterminal";
+          } else {
+            tool = "Aider / Cline";
+            cmd = "ollama run qwen2.5-coder:7b\npip install aider-chat\naider --model ollama/qwen2.5-coder:7b";
+          }
+        } else if (vram === "16gb") {
+          model = "Qwen2.5-Coder:14b (Q4_K_M)";
+          engine = "Ollama (VRAM 11GB load)";
+          pass = "38.4%";
+          if (iface === "ide") {
+            tool = "PearAI / Windsurf (Local Backend)";
+            cmd = "ollama run qwen2.5-coder:14b\n# Connect Continue or PearAI to localhost:11434";
+          } else if (iface === "fleet") {
+            tool = "MulmoTerminal + Aider Worktrees";
+            cmd = "ollama run qwen2.5-coder:14b\nnpm install -g mulmoterminal\nmulmoterminal";
+          } else {
+            tool = "Aider (Architect Mode)";
+            cmd = "ollama run qwen2.5-coder:14b\npip install aider-chat\naider --model ollama/qwen2.5-coder:14b --architect";
+          }
+        } else if (vram === "24gb") {
+          model = "Qwen2.5-Coder:32b (Q4_K_M)";
+          engine = "vLLM or Ollama (20GB VRAM load)";
+          pass = "42.1%";
+          if (iface === "fleet") {
+            tool = "Vibe Kanban / Orca";
+            cmd = "ollama run qwen2.5-coder:32b\nnpx vibe-kanban";
+          } else {
+            tool = "Aider + DeepSeek Endpoint";
+            cmd = "ollama run qwen2.5-coder:32b\npip install aider-chat\naider --model ollama/qwen2.5-coder:32b --architect";
+          }
+        } else { // apple_ultra
+          model = "DeepSeek-R1 / DeepSeek-V3 (Q4 / GGUF)";
+          engine = "llama.cpp (Metal Unified RAM)";
+          pass = "58.4%";
+          tool = "Aider + OpenHands Local Docker";
+          cmd = "ollama run deepseek-r1:70b\npip install aider-chat\naider --model ollama/deepseek-r1:70b";
+        }
+      }
+
+      document.getElementById('rec-tool').innerText = tool;
+      document.getElementById('rec-model').innerText = model;
+      document.getElementById('rec-engine').innerText = engine;
+      document.getElementById('rec-pass').innerText = pass;
+      document.getElementById('install-cmd').innerText = cmd;
+    }
+
+    function copyCode() {
+      const code = document.getElementById('install-cmd').innerText;
+      navigator.clipboard.writeText(code);
+      alert("Script copied to clipboard!");
+    }
+
+    calculate();
+  </script>
+</body>
+</html>

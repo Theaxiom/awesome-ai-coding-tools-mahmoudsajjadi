@@ -8,6 +8,18 @@
 
 ---
 
+## 🗺️ 2026 AI Coding & Agentic Engineering Landscape
+
+<p align="center">
+  <img src="assets/landscape-2026.png" alt="2026 AI Coding & Agentic Engineering Landscape" width="100%" />
+</p>
+
+> 🧮 **Interactive Web Tool:** Try the live [**AI Coding Stack & VRAM Calculator**](https://mahmoudsajjadi.github.io/awesome-ai-coding-tools/) to get tailored hardware-model-quant pairings with 1-click install scripts.
+
+> ⚡ **Agent Rules & Dotfiles Vault:** Looking for production-grade system prompts and config files? Explore our [**Copy-Paste Agent Configs Vault**](configs/) containing battle-tested starter rules for Cursor, Windsurf, Claude Code, Aider, and MCP servers.
+
+---
+
 ## Contents
 
 - [⭐ Why Star This Repository?](#-why-star-this-repository)
@@ -91,19 +103,19 @@ flowchart LR
 ```
 
 ### Standalone Agentic IDEs
-- [Antigravity](https://antigravity.google) - Advanced agentic development platform with paired-programming agents, terminal sandboxes, multi-agent collaboration, and artifact canvas rendering.
-- [Cursor](https://www.cursor.com/) - The most widely adopted AI-native editor. A fork of VS Code with instant codebase indexing, multi-file edits (Composer), and inline terminal error fixing.
-- [Kiro](https://kiro.dev/) - Next-generation agentic IDE featuring real-time collaborative agents and multi-file intent parsing.
-- [PearAI](https://trypear.ai/) - Open-source alternative to Cursor built on VS Code with transparent model routing and customizable backends.
-- [Trae](https://www.trae.ai/) - Adaptive AI-powered IDE by ByteDance featuring Claude 3.5 Sonnet / GPT-4o integration, workspace-wide context indexing, and agentic code transformation.
-- [Windsurf](https://codeium.com/windsurf) - Next-generation agentic IDE by Codeium featuring "Flows" that track real-time developer context and synchronized multi-step edits.
-- [Zed](https://zed.dev/) - Lightning-fast, GPU-accelerated code editor written in Rust with deep model integration and multi-model assistant panels.
+- [Antigravity](https://antigravity.google) — Advanced agentic development platform with paired-programming agents, terminal sandboxes, multi-agent collaboration, and artifact canvas rendering.
+- [Cursor](https://www.cursor.com/) — The most widely adopted AI-native editor. A fork of VS Code with instant codebase indexing, multi-file edits (Composer), and inline terminal error fixing.
+- [Kiro](https://kiro.dev/) — Next-generation agentic IDE featuring real-time collaborative agents and multi-file intent parsing.
+- [PearAI](https://trypear.ai/) — Open-source alternative to Cursor built on VS Code with transparent model routing and customizable backends.
+- [Trae](https://www.trae.ai/) — Adaptive AI-powered IDE by ByteDance featuring Claude 3.5 Sonnet / GPT-4o integration, workspace-wide context indexing, and agentic code transformation.
+- [Windsurf](https://codeium.com/windsurf) — Next-generation agentic IDE by Codeium featuring "Flows" that track real-time developer context and synchronized multi-step edits.
+- [Zed](https://zed.dev/) — Lightning-fast, GPU-accelerated code editor written in Rust with deep model integration and multi-model assistant panels.
 
 ### 1-Click Editor Extensions
-- [Codeium](https://codeium.com/) - Free AI code completion and chat extension for 40+ IDEs with low latency and enterprise self-hosting options.
-- [Continue.dev](https://github.com/continuedev/continue) - The leading open-source extension for VS Code and JetBrains; connects to cloud models or local models (Ollama, LM Studio).
-- [Supermaven](https://supermaven.com/) - Ultra-low latency inline code completion with a 1-million-token context window that indexes your entire repository in seconds.
-- [Tabby](https://github.com/TabbyML/tabby) - Self-hosted AI coding assistant server; an open-source, private alternative to GitHub Copilot.
+- [Codeium](https://codeium.com/) — Free AI code completion and chat extension for 40+ IDEs with low latency and enterprise self-hosting options.
+- [Continue.dev](https://github.com/continuedev/continue) — The leading open-source extension for VS Code and JetBrains; connects to cloud models or local models (Ollama, LM Studio).
+- [Supermaven](https://supermaven.com/) — Ultra-low latency inline code completion with a 1-million-token context window that indexes your entire repository in seconds.
+- [Tabby](https://github.com/TabbyML/tabby) — Self-hosted AI coding assistant server; an open-source, private alternative to GitHub Copilot.
 
 ### Beginner Prompting Cheatsheet
 To get high-quality code suggestions, use the **3-Part Prompt Formula**:
@@ -144,10 +156,10 @@ sequenceDiagram
 ```
 
 ### Terminal & CLI Pair Programmers
-- [Aider](https://github.com/paul-gauthier/aider) - Command-line AI pair programmer that parses your repository into a Tree-sitter map, edits multiple files, runs lint/test commands, and automatically commits atomic git diffs.
-- [Avante.nvim](https://github.com/yetone/avante.nvim) - Neovim plugin designed to emulate Cursor AI's multi-file editing capabilities natively in Lua.
+- [Aider](https://github.com/paul-gauthier/aider) — Command-line AI pair programmer that parses your repository into a Tree-sitter map, edits multiple files, runs lint/test commands, and automatically commits atomic git diffs.
+- [Avante.nvim](https://github.com/yetone/avante.nvim) — Neovim plugin designed to emulate Cursor AI's multi-file editing capabilities natively in Lua.
 - [Claude Code](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview) — High-agency agentic command-line tool capable of autonomous directory indexing, running bash commands, handling git diffs, and orchestrating complex multi-file refactors.
-- [Cline](https://github.com/cline/cline) - Autonomous coding agent extension for VS Code that executes terminal commands, inspects local browser previews, and requests human-in-the-loop permission.
+- [Cline](https://github.com/cline/cline) — Autonomous coding agent extension for VS Code that executes terminal commands, inspects local browser previews, and requests human-in-the-loop permission.
 - [Codex CLI](https://github.com/openai/codex-cli) — Command-line interface for OpenAI's coding models optimized for fast in-terminal code modifications and script execution.
 - [Gemini CLI](https://github.com/google-gemini/gemini-cli) — Google's command-line agent utilizing 1M+ token context windows to ingest entire repositories for refactoring and debugging.
 - [Goose](https://github.com/block/goose) — Open-source, extensible AI agent by Block that automates engineering tasks, script execution, and multi-tool workflows directly from the terminal.
@@ -175,26 +187,26 @@ Open standard protocol connecting coding agents to local developer environments,
 - [Postgres MCP](https://github.com/modelcontextprotocol/servers/tree/main/src/postgres) — Read-only schema inspector and query execution bridge enabling coding agents to validate database migrations and models.
 
 ### Top Open-Weight Coding Models
-- [Codestral](https://mistral.ai/news/codestral/) - Open-weight model specialized in code completion and fill-in-the-middle tasks with an 80-language vocabulary.
-- [DeepSeek-Coder-V2](https://github.com/deepseek-ai/DeepSeek-Coder-V2) - Mixture-of-Experts code language model with 128k context length supporting 338 programming languages.
+- [Codestral](https://mistral.ai/news/codestral/) — Open-weight model specialized in code completion and fill-in-the-middle tasks with an 80-language vocabulary.
+- [DeepSeek-Coder-V2](https://github.com/deepseek-ai/DeepSeek-Coder-V2) — Mixture-of-Experts code language model with 128k context length supporting 338 programming languages.
 - [DeepSeek-V3 / DeepSeek-R1](https://github.com/deepseek-ai/DeepSeek-V3) — SOTA 671B Mixture-of-Experts (37B active) and reasoning foundation models matching top proprietary models in code generation, multi-file reasoning, and complex refactors.
 - [Llama-4 / CodeLlama Series](https://github.com/meta-llama/llama) — Meta's open foundation architectures specialized for code generation, instruction following, and infilling tasks.
-- [Qwen2.5-Coder](https://github.com/QwenLM/Qwen2.5-Coder) - Leading open-source coding foundation model series (0.5B to 32B) competitive with leading closed models across code generation, completion, and multi-file reasoning.
+- [Qwen2.5-Coder](https://github.com/QwenLM/Qwen2.5-Coder) — Leading open-source coding foundation model series (0.5B to 32B) competitive with leading closed models across code generation, completion, and multi-file reasoning.
 - [Qwen3-Coder Preview](https://github.com/QwenLM/Qwen) — Next-generation reasoning and agentic foundation model pre-trained on extended multimodal code corpora with native tool-calling.
-- [StarCoder 2](https://github.com/bigcode-project/starcoder2) - Open, transparently trained code models (3B, 7B, 15B) curated by BigCode under permissive licenses.
+- [StarCoder 2](https://github.com/bigcode-project/starcoder2) — Open, transparently trained code models (3B, 7B, 15B) curated by BigCode under permissive licenses.
 
 ### Local Execution Engines (Private & Offline)
-- [llama.cpp](https://github.com/ggerganov/llama.cpp) - High-performance C/C++ inference engine for quantized GGUF models with minimal hardware overhead.
-- [LM Studio](https://lmstudio.ai/) - Graphical desktop application for running local GGUF models on Apple Silicon and NVIDIA GPUs.
-- [Ollama](https://ollama.com/) - The easiest way to get up and running with local models via a single terminal command (`ollama run qwen2.5-coder`).
-- [vLLM](https://github.com/vllm-project/vllm) - High-throughput, memory-efficient LLM serving engine featuring PagedAttention for production local deployments.
+- [llama.cpp](https://github.com/ggerganov/llama.cpp) — High-performance C/C++ inference engine for quantized GGUF models with minimal hardware overhead.
+- [LM Studio](https://lmstudio.ai/) — Graphical desktop application for running local GGUF models on Apple Silicon and NVIDIA GPUs.
+- [Ollama](https://ollama.com/) — The easiest way to get up and running with local models via a single terminal command (`ollama run qwen2.5-coder`).
+- [vLLM](https://github.com/vllm-project/vllm) — High-throughput, memory-efficient LLM serving engine featuring PagedAttention for production local deployments.
 
 ### Automated Testing, QA & Code Review
-- [CodeRabbit](https://coderabbit.ai/) - AI-driven pull request reviewer providing line-by-line feedback, sequence diagrams, and security vulnerability checks.
-- [Cover-Agent](https://github.com/Codium-ai/cover-agent) - Open-source generative testing tool that iteratively generates unit tests until target coverage is met.
-- [Keploy](https://github.com/keploy/keploy) - Open-source zero-code test generator that captures real network calls and creates automated regression test suites.
-- [Qodo (CodiumAI)](https://www.qodo.ai/) - Comprehensive code integrity platform analyzing PRs, writing regression tests, and enforcing code standards.
-- [Semgrep Assistant](https://semgrep.dev/) - Combines deterministic static analysis (AST rules) with LLM explanations to eliminate false-positive security findings.
+- [CodeRabbit](https://coderabbit.ai/) — AI-driven pull request reviewer providing line-by-line feedback, sequence diagrams, and security vulnerability checks.
+- [Cover-Agent](https://github.com/Codium-ai/cover-agent) — Open-source generative testing tool that iteratively generates unit tests until target coverage is met.
+- [Keploy](https://github.com/keploy/keploy) — Open-source zero-code test generator that captures real network calls and creates automated regression test suites.
+- [Qodo (CodiumAI)](https://www.qodo.ai/) — Comprehensive code integrity platform analyzing PRs, writing regression tests, and enforcing code standards.
+- [Semgrep Assistant](https://semgrep.dev/) — Combines deterministic static analysis (AST rules) with LLM explanations to eliminate false-positive security findings.
 
 ### Step-by-Step Local Offline Recipe
 Run a full-featured coding agent on your local machine with **zero cloud fees** and **complete data privacy**:
@@ -221,9 +233,9 @@ aider --model ollama/qwen2.5-coder:14b
 *For AI researchers, systems engineers, and teams building custom autonomous coding agents.*
 
 ### Autonomous Software Engineers (SWE-bench)
-- [Devika](https://github.com/stitionai/devika) - Agentic open-source software engineer capable of breaking down user goals into multi-stage tasks and executing web research.
-- [OpenHands (formerly OpenDevin)](https://github.com/All-Hands-AI/OpenHands) - Autonomous software development agent capable of writing code, browsing the web, and running dockerized execution sandboxes.
-- [SWE-agent](https://github.com/princeton-nlp/SWE-agent) - Open-source agent developed by Princeton that resolves real GitHub issues on the SWE-bench benchmark using an Agent-Computer Interface (ACI).
+- [Devika](https://github.com/stitionai/devika) — Agentic open-source software engineer capable of breaking down user goals into multi-stage tasks and executing web research.
+- [OpenHands (formerly OpenDevin)](https://github.com/All-Hands-AI/OpenHands) — Autonomous software development agent capable of writing code, browsing the web, and running dockerized execution sandboxes.
+- [SWE-agent](https://github.com/princeton-nlp/SWE-agent) — Open-source agent developed by Princeton that resolves real GitHub issues on the SWE-bench benchmark using an Agent-Computer Interface (ACI).
 
 ### System Architecture & Context Assembly
 
@@ -476,6 +488,18 @@ Explore our supplementary technical deep-dives:
 ## 🤝 Contributing
 
 We welcome community contributions! Please review [CONTRIBUTING.md](CONTRIBUTING.md) to propose additions or modifications.
+
+### 🛡️ Featured Tool Badge
+Are you the author or maintainer of an AI coding tool featured in this catalog? You can embed this official backlink badge directly on your project's `README.md`:
+
+```markdown
+[![Featured in Awesome AI Coding Tools](https://raw.githubusercontent.com/mahmoudsajjadi/awesome-ai-coding-tools/main/assets/badge-featured.svg)](https://github.com/mahmoudsajjadi/awesome-ai-coding-tools)
+```
+
+Preview:  
+<a href="https://github.com/mahmoudsajjadi/awesome-ai-coding-tools">
+  <img src="assets/badge-featured.svg" alt="Featured in Awesome AI Coding Tools" />
+</a>
 
 ### 🌟 Hall of Contributors
 
