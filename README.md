@@ -403,6 +403,17 @@ If you cite or benchmark these foundational tools and literature, use the follow
 
 ---
 
+## 📚 Detailed Guides & Documentation
+
+Explore our supplementary technical deep-dives:
+- [📖 Technical Glossary](docs/GLOSSARY.md) — Definitions for AST, FIM, Repo-Maps, and ACI.
+- [💡 Prompting Guide](docs/PROMPT_GUIDE.md) — 3-part templates for features, refactoring, and bug fixes.
+- [💻 Hardware & VRAM Sizing Guide](docs/HARDWARE_GUIDE.md) — GPU specifications for running local coding models.
+- [🛡️ Security Best Practices](docs/SECURITY_BEST_PRACTICES.md) — Credential protection and sandboxed execution.
+- [📊 Benchmarks Overview](docs/BENCHMARKS.md) — HumanEval, MBPP, and SWE-bench methodologies.
+
+---
+
 ## 🤝 Contributing
 
 We welcome community contributions! Please review [CONTRIBUTING.md](CONTRIBUTING.md) to propose additions or modifications.
