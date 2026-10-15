@@ -18,6 +18,7 @@
   - [Beginner Prompting Cheatsheet](#beginner-prompting-cheatsheet)
 - [⚡ Level 2: Intermediate (CLI Agents & Local LLMs)](#-level-2-intermediate-cli-agents--local-llms)
   - [Terminal & CLI Pair Programmers](#terminal--cli-pair-programmers)
+  - [Running Agents in Parallel](#running-agents-in-parallel)
   - [Top Open-Weight Coding Models](#top-open-weight-coding-models)
   - [Local Execution Engines (Private & Offline)](#local-execution-engines-private--offline)
   - [Automated Testing, QA & Code Review](#automated-testing-qa--code-review)
@@ -141,6 +142,17 @@ sequenceDiagram
 - [Avante.nvim](https://github.com/yetone/avante.nvim) - Neovim plugin designed to emulate Cursor AI's multi-file editing capabilities natively in Lua.
 - [Cline](https://github.com/cline/cline) - Autonomous coding agent extension for VS Code that executes terminal commands, inspects local browser previews, and requests human-in-the-loop permission.
 - [Mentat](https://mentat.ai/) — Open-source AI tool capable of coordinating complex git workflows directly in the terminal with repo-wide context.
+- [Xenon](https://github.com/xianyu-sheng/Xenon) — CLI coding agent that records every session event in an append-only hash chain verifiable on demand via `/evidence`, enforces deterministic hollow-answer checks, and exports manual verification checklists with multi-model and MCP client support.
+
+### Running Agents in Parallel
+Control planes, terminal managers, and orchestrators that run multiple coding agents concurrently across worktrees:
+- [AgentsMesh](https://github.com/AgentsMesh/AgentsMesh) — Platform for scheduling and isolating multiple coding agents across distributed workstations.
+- [ccmanager](https://github.com/kbwo/ccmanager) — Session manager for coordinating parallel CLI agent workflows across multiple repositories.
+- [Claude Squad](https://github.com/smtg-ai/claude-squad) — Terminal manager for running multiple concurrent coding agent sessions across terminal tabs.
+- [cmux](https://github.com/manaflow-ai/cmux) — Ghostty-based macOS terminal designed with vertical workspaces and desktop notifications for agent fleets.
+- [MulmoTerminal](https://github.com/receptron/mulmoterminal) — Browser-based terminal grid running parallel coding agent sessions with dedicated git worktrees per cell, backed by tmux.
+- [Orca](https://github.com/stablyai/orca) — Autonomous development environment built to orchestrate and execute a fleet of parallel coding agents.
+- [Vibe Kanban](https://github.com/BloopAI/vibe-kanban) — Kanban board dashboard to plan, dispatch, monitor, and review tasks across multiple agent CLIs.
 
 ### Top Open-Weight Coding Models
 - [Codestral](https://mistral.ai/news/codestral/) - Open-weight model specialized in code completion and fill-in-the-middle tasks with an 80-language vocabulary.
