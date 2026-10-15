@@ -3,7 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Coding Stack & VRAM Calculator (2026)</title>
+  <title>AI Coding Stack & VRAM Calculator (2026) | Awesome AI Coding Tools</title>
+  <meta name="description" content="Calculate your optimal AI coding assistant, model quantization, and GPU VRAM footprint (8GB, 12GB, 16GB, 24GB). Includes 1-click terminal install commands for Ollama, Aider, Claude Code, and SWE-bench SOTA models.">
+  <meta name="keywords" content="ai coding, coding agents, vram calculator, ollama, aider, claude code, cursor, deepseek, qwen 2.5 coder, swe-bench, mcp servers">
+  <link rel="canonical" href="https://mahmoudsajjadi.github.io/awesome-ai-coding-tools/">
+
+  <!-- OpenGraph / Twitter Cards -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mahmoudsajjadi.github.io/awesome-ai-coding-tools/">
+  <meta property="og:title" content="AI Coding Stack & VRAM Calculator (2026)">
+  <meta property="og:description" content="Calculate the exact coding model, quantization, and agent stack for your hardware.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/mahmoudsajjadi/awesome-ai-coding-tools/main/assets/landscape-2026.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Coding Stack & VRAM Calculator (2026)">
+  <meta name="twitter:description" content="Calculate the exact coding model, quantization, and agent stack for your hardware.">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/mahmoudsajjadi/awesome-ai-coding-tools/main/assets/landscape-2026.png">
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "AI Coding Stack & VRAM Calculator",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Cross-platform",
+        "url": "https://mahmoudsajjadi.github.io/awesome-ai-coding-tools/",
+        "author": {
+          "@type": "Person",
+          "name": "Seyed Mahmoud Sajjadi Mohammadabadi",
+          "url": "https://github.com/mahmoudsajjadi"
+        },
+        "description": "Interactive calculator and taxonomy for AI coding assistants, local LLMs, and VRAM sizing."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the best AI coding assistant in 2026?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For in-editor multi-file composition, Cursor and Windsurf lead developer adoption. For autonomous terminal workflows requiring bash execution and atomic git commits, Claude Code and Aider achieve the highest empirical accuracy."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the best local coding LLM for 8GB, 16GB, and 24GB VRAM?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For 8GB VRAM GPUs, Qwen 2.5 Coder 7B (Q4_K_M) provides the best low-latency completion. For 16GB VRAM, Devstral Small 2 (24B) offers a 384K context window. For 24GB VRAM cards (RTX 3090/4090), Qwen3-Coder 30B MoE and Qwen 2.5 Coder 32B deliver frontier-grade performance offline."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between AGENTS.md, CLAUDE.md, and .cursor/rules?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "AGENTS.md is the universal open standard supported across Cursor, Claude Code, Codex CLI, and Aider for project memory. CLAUDE.md manages tool permissions and test loops for Anthropic's CLI. The .cursor/rules/*.mdc files enforce scoped rules matched dynamically to specific file extensions."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the best free alternative to Cursor and Claude Code?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The highest-rated free open-source stack combines Continue.dev (or PearAI) in VS Code or Aider in the terminal, connected to local models running via Ollama (Qwen 2.5 Coder) or leveraging Gemini CLI's 1,000 free requests per day."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which AI coding agent scores highest on SWE-bench Verified?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "On the SWE-bench Verified benchmark (500 curated GitHub issues), OpenHands with CodeAct 2.1 achieves 68.2% pass@1 resolution using Claude 3.7 Sonnet (Thinking). SWE-agent achieves 54.2% pass@1, while local open-weight agents using Qwen 2.5 Coder 32B resolve 38.4% of issues at zero cloud cost."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
   <style>
     :root {
       --bg: #0d1117;

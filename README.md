@@ -4,6 +4,11 @@
 
 > 🚀 **Building an AI Coding Tool or Agent?** [**Submit your tool in 30 seconds**](https://github.com/mahmoudsajjadi/awesome-ai-coding-tools/issues/new?template=submit-tool.yml) — we review, test, and merge qualifying tools within 24 hours!
 
+> 🔌 **Query this Repository via MCP (GitMCP):** Connect this catalog directly into Claude Code, Cursor, or Antigravity as an active Model Context Protocol server:
+> ```text
+> https://gitmcp.io/mahmoudsajjadi/awesome-ai-coding-tools
+> ```
+
 > 💡 **Sister Repository:** Looking for scientific discovery, paper writing, and literature review tools? Check out [Awesome AI Research Tools](https://github.com/mahmoudsajjadi/awesome-ai-research-tools).
 
 ---
@@ -20,9 +25,20 @@
 
 ---
 
+## 🔍 Popular 2026 Head-to-Head Comparisons
+
+Explore our dedicated deep-dive technical benchmarks and guides:
+- 🥊 [**Cursor vs. Windsurf vs. Google Antigravity vs. Zed**](docs/comparisons/cursor-vs-windsurf-vs-antigravity-2026.md) — 2026 agentic IDE showdown.
+- 💻 [**Claude Code vs. Aider vs. Cline vs. Roo Code vs. OpenCode**](docs/comparisons/claude-code-vs-aider-vs-cline-vs-opencode.md) — SOTA CLI and terminal coding agents.
+- ⚡ [**Best Local Coding LLMs by VRAM (8GB, 12GB, 16GB, 24GB)**](docs/comparisons/best-local-coding-llm-8gb-16gb-24gb-vram-ollama.md) — Quantization and hardware pairing guide.
+- 📋 [**AGENTS.md vs. CLAUDE.md vs. .cursor/rules**](docs/comparisons/agents-md-vs-claude-md-vs-cursor-rules.md) — The complete 2026 agent context standard & templates.
+
+---
+
 ## Contents
 
 - [⭐ Why Star This Repository?](#-why-star-this-repository)
+- [🔍 Popular 2026 Head-to-Head Comparisons](#-popular-2026-head-to-head-comparisons)
 - [🗺 Choose Your Path: Interactive Roadmap](#-choose-your-path-interactive-roadmap)
 - [🚀 60-Second Quickstart (Start Here)](#-60-second-quickstart-start-here)
 - [🌱 Level 1: Beginner (Plug-and-Play & In-Editor)](#-level-1-beginner-plug-and-play--in-editor)
@@ -48,6 +64,7 @@
   - [SOTA Benchmark Leaderboard](#sota-benchmark-leaderboard)
   - [Seminal Academic Papers](#seminal-academic-papers)
 - [⚖️ Comprehensive Multi-Tier Comparison Matrix](#-comprehensive-multi-tier-comparison-matrix)
+- [❓ Frequently Asked Questions (FAQ)](#-frequently-asked-questions-2026-ai-coding-faq)
 - [📖 BibTeX Citations](#-bibtex-citations)
 - [📚 Detailed Guides & Documentation](#-detailed-guides--documentation)
 - [🤝 Contributing](#-contributing)
@@ -551,6 +568,25 @@ Empirical evaluation on the standardized **SWE-bench Verified** benchmark (500 c
 | **OpenHands** | 🔬 Expert | Web UI / Docker | ✅ | ✅ | ✅ | ✅ (Docker Sandbox) | Autonomous issue resolution |
 | **SWE-agent** | 🔬 Expert | CLI / Benchmark | ✅ | ✅ | ✅ | ✅ (Containerized) | SWE-bench research & evaluation |
 | **Qwen2.5-Coder** | ⚡ Intermediate | Model Weights | N/A | ✅ | ✅ | N/A | Self-hosted foundation model |
+
+---
+
+## ❓ Frequently Asked Questions (2026 AI Coding FAQ)
+
+### What is the best AI coding assistant in 2026?
+For in-editor multi-file composition, Cursor and Windsurf lead developer adoption. For autonomous terminal workflows requiring bash execution, atomic git commits, and self-debugging test loops, Claude Code and Aider achieve the highest empirical accuracy across real-world codebases.
+
+### What is the best local coding LLM for 8GB, 16GB, and 24GB VRAM?
+For 8GB VRAM GPUs, Qwen 2.5 Coder 7B (Q4_K_M) provides the best low-latency completion. For 16GB VRAM, Devstral Small 2 (24B) offers a 384K context window. For 24GB VRAM cards (RTX 3090/4090), Qwen3-Coder 30B MoE and Qwen 2.5 Coder 32B deliver frontier-grade performance offline.
+
+### What is the difference between AGENTS.md, CLAUDE.md, and .cursor/rules?
+AGENTS.md is the universal open standard supported across Cursor, Claude Code, Codex CLI, and Aider for project memory. CLAUDE.md manages tool permissions and test loops for Anthropic's CLI. The `.cursor/rules/*.mdc` files enforce scoped rules matched dynamically to specific file extensions.
+
+### What is the best free alternative to Cursor and Claude Code?
+The highest-rated free open-source stack combines Continue.dev (or PearAI) in VS Code or Aider in the terminal, connected to local models running via Ollama (Qwen 2.5 Coder) or leveraging Gemini CLI's 1,000 free requests per day.
+
+### Which AI coding agent scores highest on SWE-bench Verified?
+On the SWE-bench Verified benchmark (500 curated GitHub issues), OpenHands with CodeAct 2.1 achieves 68.2% pass@1 resolution using Claude 3.7 Sonnet (Thinking). SWE-agent achieves 54.2% pass@1, while local open-weight agents using Qwen 2.5 Coder 32B resolve 38.4% of issues at zero cloud cost.
 
 ---
 

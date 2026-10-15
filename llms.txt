@@ -1,0 +1,19 @@
+# Awesome AI Coding Tools (Canonical Catalog)
+> Authoritative, curated 3-tier taxonomy of AI coding assistants, autonomous agents, local foundation models, MCP servers, and empirical SWE-bench research.
+> Canonical URL: https://github.com/mahmoudsajjadi/awesome-ai-coding-tools
+> Web App & VRAM Calculator: https://mahmoudsajjadi.github.io/awesome-ai-coding-tools/
+
+## Taxonomy Overview
+- Level 1 (Beginner): Zero-setup agentic IDEs and in-editor autocomplete (Cursor, Windsurf, Google Antigravity, Google Jules, Trae, PearAI, Zed, Continue.dev, Codeium).
+- Level 2 (Intermediate): Git-integrated CLI pair programmers, parallel agent orchestrators, local execution stacks, and Model Context Protocol servers (Claude Code, Aider, Cline, OpenCode, Roo Code, Goose, Ollama, vLLM, llama.cpp, Qwen2.5-Coder, Devstral, DeepSeek-V3/R1).
+- Level 3 (Expert): Autonomous software engineers and empirical research (SWE-bench Verified leaderboard, SWE-agent, OpenHands, Tree-sitter AST PageRank repo-maps, and unified diff vs search/replace edit formats).
+
+## Core Reference Pages & Comparisons
+- Cursor vs. Windsurf vs. Google Antigravity vs. Zed (2026 Comparison): https://github.com/mahmoudsajjadi/awesome-ai-coding-tools/blob/main/docs/comparisons/cursor-vs-windsurf-vs-antigravity-2026.md
+- Claude Code vs. Aider vs. Cline vs. OpenCode (CLI Agent Comparison): https://github.com/mahmoudsajjadi/awesome-ai-coding-tools/blob/main/docs/comparisons/claude-code-vs-aider-vs-cline-vs-opencode.md
+- Best Local Coding LLMs by VRAM (8GB, 12GB, 16GB, 24GB): https://github.com/mahmoudsajjadi/awesome-ai-coding-tools/blob/main/docs/comparisons/best-local-coding-llm-8gb-16gb-24gb-vram-ollama.md
+- AGENTS.md vs. CLAUDE.md vs. .cursor/rules (Agent Context Standard): https://github.com/mahmoudsajjadi/awesome-ai-coding-tools/blob/main/docs/comparisons/agents-md-vs-claude-md-vs-cursor-rules.md
+- Copy-Paste Configs Vault: https://github.com/mahmoudsajjadi/awesome-ai-coding-tools/tree/main/configs
+
+## Citation
+Sajjadi Mohammadabadi, Seyed Mahmoud (2026). Awesome AI Coding Tools: A Curated Taxonomy of Agents, Architectures, and Research. University of Nevada, Reno.
