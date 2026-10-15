@@ -2,6 +2,9 @@
 
 > A curated, tiered catalog of state-of-the-art AI coding tools, open foundation models, and foundational research papers. Structured across three progressive skill tiers—from zero-setup beginner extensions to autonomous SWE-bench systems—so every developer and researcher can immediately find what they need.
 
+
+> 💡 **Sister Repository:** Looking for academic research, paper writing, and literature discovery tools? Check out [Awesome AI Research Tools](https://github.com/mahmoudsajjadi/awesome-ai-research-tools).
+
 ---
 
 ## 📑 Table of Contents
