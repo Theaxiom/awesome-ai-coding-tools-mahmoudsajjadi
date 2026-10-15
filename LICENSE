@@ -1,4 +1,24 @@
-MIT License
+# Licenses
+
+This repository is dual-licensed:
+1. Curated list content, documentation, and data are dedicated to the public domain under Creative Commons Zero (CC0 1.0 Universal).
+2. Automation scripts, utility code, and software components are licensed under the MIT License.
+
+---
+
+## Creative Commons Zero v1.0 Universal (CC0 1.0)
+
+The person who associated a work with this deed has dedicated the work to the
+public domain by waiving all of his or her rights to the work worldwide under
+copyright law, including all related and neighboring rights, to the extent
+allowed by law.
+
+You can copy, modify, distribute and perform the work, even for commercial
+purposes, all without asking permission.
+
+---
+
+## MIT License
 
 Copyright (c) 2026 Mahmoud Sajjadi
 
