@@ -433,3 +433,16 @@ Explore our supplementary technical deep-dives:
 ## 🤝 Contributing
 
 We welcome community contributions! Please review [CONTRIBUTING.md](CONTRIBUTING.md) to propose additions or modifications.
+
+### 🌟 Hall of Contributors
+
+Thank you to all the developers who help maintain and expand this catalog!
+
+<a href="https://github.com/mahmoudsajjadi/awesome-ai-coding-tools/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=mahmoudsajjadi/awesome-ai-coding-tools" alt="Contributors" />
+</a>
+
+Special thanks to our early community contributors:
+- [@xianyu-sheng](https://github.com/xianyu-sheng) — Added [Xenon](https://github.com/xianyu-sheng/Xenon) verifiable coding agent ([#1](https://github.com/mahmoudsajjadi/awesome-ai-coding-tools/pull/1))
+- [@isamu](https://github.com/isamu) — Contributed the [Running Agents in Parallel](#running-agents-in-parallel) section ([#2](https://github.com/mahmoudsajjadi/awesome-ai-coding-tools/pull/2))
+
