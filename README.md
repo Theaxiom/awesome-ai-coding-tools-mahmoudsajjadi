@@ -681,6 +681,14 @@ Special thanks to our early community contributors:
 
 ---
 
+## 🔗 Related Curations & Ecosystem Catalogs
+
+- **[awesome-cli-coding-agents](https://github.com/bradagi/awesome-cli-coding-agents)** — A deep, dedicated directory specifically tracking terminal-native coding agents, session managers, and parallel harnesses.
+- **[awesome-ai-research-tools](https://github.com/mahmoudsajjadi/awesome-ai-research-tools)** — Curated catalog of AI literature discovery, paper comprehension, and automated scientific discovery engines.
+- **[awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers)** — A curated list of Model Context Protocol (MCP) servers and tool ecosystems.
+
+---
+
 ## 📈 Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=mahmoudsajjadi/awesome-ai-coding-tools&type=Date)](https://star-history.com/#mahmoudsajjadi/awesome-ai-coding-tools&Date)
