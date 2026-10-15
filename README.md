@@ -29,14 +29,17 @@
   - [Standalone Agentic IDEs](#standalone-agentic-ides)
   - [1-Click Editor Extensions](#1-click-editor-extensions)
   - [Beginner Prompting Cheatsheet](#beginner-prompting-cheatsheet)
+- [📋 2026 Agent Context Standard (AGENTS.md)](#-2026-agent-context-standard-agentsmd-vs-claudemd-vs-cursorrules)
 - [⚡ Level 2: Intermediate (CLI Agents & Local LLMs)](#-level-2-intermediate-cli-agents--local-llms)
   - [Terminal & CLI Pair Programmers](#terminal--cli-pair-programmers)
   - [Running Agents in Parallel](#running-agents-in-parallel)
   - [Model Context Protocol (MCP) Servers](#-model-context-protocol-mcp-servers-for-coding)
   - [Top Open-Weight Coding Models](#top-open-weight-coding-models)
+  - [Exact GPU VRAM to Model Cheat Sheet](#-exact-gpu-vram-to-local-coding-model-cheat-sheet)
   - [Local Execution Engines (Private & Offline)](#local-execution-engines-private--offline)
   - [Automated Testing, QA & Code Review](#automated-testing-qa--code-review)
   - [Step-by-Step Local Offline Recipe](#step-by-step-local-offline-recipe)
+- [💸 Token Cost & Free-Tier Survival Guide](#-token-cost--free-tier-survival-guide-stop-burning-20day)
 - [🔬 Level 3: Expert (Autonomous Systems & Research)](#-level-3-expert-autonomous-systems--research)
   - [Autonomous Software Engineers (SWE-bench)](#autonomous-software-engineers-swe-bench)
   - [System Architecture & Context Assembly](#system-architecture--context-assembly)
@@ -105,6 +108,7 @@ flowchart LR
 ### Standalone Agentic IDEs
 - [Antigravity](https://antigravity.google) — Advanced agentic development platform with paired-programming agents, terminal sandboxes, multi-agent collaboration, and artifact canvas rendering.
 - [Cursor](https://www.cursor.com/) — The most widely adopted AI-native editor. A fork of VS Code with instant codebase indexing, multi-file edits (Composer), and inline terminal error fixing.
+- [Google Jules](https://jules.google/) — Asynchronous GitHub agent that clones repositories in cloud sandboxes, navigates issues, runs test suites, and opens verified pull requests autonomously.
 - [Kiro](https://kiro.dev/) — Next-generation agentic IDE featuring real-time collaborative agents and multi-file intent parsing.
 - [PearAI](https://trypear.ai/) — Open-source alternative to Cursor built on VS Code with transparent model routing and customizable backends.
 - [Trae](https://www.trae.ai/) — Adaptive AI-powered IDE by ByteDance featuring Claude 3.5 Sonnet / GPT-4o integration, workspace-wide context indexing, and agentic code transformation.
@@ -125,6 +129,49 @@ To get high-quality code suggestions, use the **3-Part Prompt Formula**:
 | **1. Role & Intent** | *"Write a Python utility function using FastAPI..."* |
 | **2. Concrete Context** | *"It should take a JSON payload containing `user_id` and `timestamp`..."* |
 | **3. Specific Constraints** | *"Handle 404 errors gracefully, include type hints, and write 2 pytest unit tests."* |
+
+---
+
+## 📋 2026 Agent Context Standard: AGENTS.md vs. CLAUDE.md vs. .cursor/rules
+
+Modern coding agents read persistent workspace instructions to understand project architecture, test scripts, and coding style. Choosing the right convention avoids repetitive prompting across tools:
+
+| Standard / File Format | Scope & Ecosystem | Supported Agents | Primary Use Case |
+| :--- | :--- | :--- | :--- |
+| **`AGENTS.md`** | **Universal Open Standard** | Claude Code (v2.1.277+), Cursor, Codex CLI, Aider, Windsurf, Zed, OpenCode, Jules | Root project memory, non-inferable build/test commands, and architectural boundaries. |
+| **`CLAUDE.md`** | Tool-Specific (Anthropic) | Claude Code CLI, Claude Desktop | Sub-agent tool permissions, compact test-first commands, and terminal execution loops. |
+| **`.cursor/rules/*.mdc`** | Scoped Directory (Cursor) | Cursor IDE | File-glob matched rules (`*.ts`, `*.py`) loaded dynamically only when matching files are opened. |
+| **`SKILL.md`** | Task-Triggered Plugin | Antigravity, OpenCode, Extensible Agents | On-demand procedural playbooks loaded only when specific keywords or slash commands trigger. |
+
+> 💡 **The 2026 Token-Saving Rule:** Research indicates that pasting complete repository directory trees into root context files inflates prompt token overhead by 20%+ and degrades reasoning accuracy. Modern agents already construct dynamic AST maps via Tree-sitter. **Only include non-inferable commands (build, test, lint) and negative constraints ("what NOT to do").**
+
+<details>
+<summary>⚡ <b>Click to Copy: Production-Ready Lean AGENTS.md Template (Under 50 Lines)</b></summary>
+
+```markdown
+# AGENTS.md — Universal Agent Context Specification
+
+## 1. Project Overview & Architecture
+- Stack: TypeScript / Node.js (or Python 3.12 / FastAPI)
+- Structure: Modular services under `src/` (or `app/`), test suites under `tests/`.
+
+## 2. Essential Commands (Non-Inferable)
+- Build: `npm run build` (or `cargo build --release` / `poetry run build`)
+- Fast Test Loop: `npm test -- --bail` (or `pytest -v --tb=short`)
+- Lint & Format: `npm run lint` (or `ruff check .`)
+
+## 3. Negative Constraints (What NOT to Do)
+- NEVER commit secrets, API keys, or `.env` files.
+- NEVER delete or overwrite existing docstrings, copyright headers, or test suites unless explicitly requested.
+- DO NOT use wildcard imports (`from module import *`).
+- DO NOT introduce heavy external dependencies for utilities solvable with standard libraries.
+
+## 4. Code Style & Typing Standards
+- All code must pass strict type checking without warnings (`mypy --strict` or TypeScript `strict: true`).
+- Keep functions modular and under 50 lines. Keep files under 300 lines.
+- Commits must adhere to Conventional Commits: `feat:`, `fix:`, `refactor:`, `test:`, `docs:`.
+```
+</details>
 
 ---
 
@@ -165,6 +212,7 @@ sequenceDiagram
 - [Goose](https://github.com/block/goose) — Open-source, extensible AI agent by Block that automates engineering tasks, script execution, and multi-tool workflows directly from the terminal.
 - [Kilo Code](https://github.com/kilo-code/kilo) — High-performance terminal coding assistant engineered for low latency and zero-cloud local workflow execution.
 - [Mentat](https://mentat.ai/) — Open-source AI tool capable of coordinating complex git workflows directly in the terminal with repo-wide context.
+- [OpenCode](https://github.com/opencode-ai/opencode) — Provider-agnostic open-source terminal coding agent harness supporting custom agent loops, local model routing, and unified diff execution.
 - [Roo Code (formerly Roo Cline)](https://github.com/RooVetGit/Roo-Code) — Community-driven autonomous coding assistant extension for VS Code featuring custom agent modes and MCP server connectivity.
 - [Xenon](https://github.com/xianyu-sheng/Xenon) — CLI coding agent that records every session event in an append-only hash chain verifiable on demand via `/evidence`, enforces deterministic hollow-answer checks, and exports manual verification checklists with multi-model and MCP client support.
 
@@ -186,14 +234,62 @@ Open standard protocol connecting coding agents to local developer environments,
 - [GitHub MCP Server](https://github.com/modelcontextprotocol/servers/tree/main/src/github) — Integrates GitHub issues, pull requests, repository searches, and commit reviews directly into agent reasoning loops.
 - [Postgres MCP](https://github.com/modelcontextprotocol/servers/tree/main/src/postgres) — Read-only schema inspector and query execution bridge enabling coding agents to validate database migrations and models.
 
+<details>
+<summary>📦 <b>Click to Copy: Ready-to-Use mcp.json Stack (GitHub + Context7 + Postgres + Playwright)</b></summary>
+
+Paste this into your Claude Code, Cursor, Cline, or Antigravity configuration file (`~/.config/Claude/claude_desktop_config.json` or project `.mcp.json`):
+
+```json
+{
+  "mcpServers": {
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "<YOUR_GITHUB_TOKEN>"
+      }
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "."]
+    },
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@context7/mcp-server"]
+    },
+    "postgres": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-postgres", "postgresql://localhost:5432/mydb"]
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-playwright"]
+    }
+  }
+}
+```
+</details>
+
 ### Top Open-Weight Coding Models
 - [Codestral](https://mistral.ai/news/codestral/) — Open-weight model specialized in code completion and fill-in-the-middle tasks with an 80-language vocabulary.
 - [DeepSeek-Coder-V2](https://github.com/deepseek-ai/DeepSeek-Coder-V2) — Mixture-of-Experts code language model with 128k context length supporting 338 programming languages.
 - [DeepSeek-V3 / DeepSeek-R1](https://github.com/deepseek-ai/DeepSeek-V3) — SOTA 671B Mixture-of-Experts (37B active) and reasoning foundation models matching top proprietary models in code generation, multi-file reasoning, and complex refactors.
+- [Devstral Small 2 (24B)](https://mistral.ai/news/devstral-24b/) — High-efficiency 24B open coding model by Mistral featuring an ultra-long 384k token context window optimized for whole-repo reasoning and local 16GB VRAM execution.
 - [Llama-4 / CodeLlama Series](https://github.com/meta-llama/llama) — Meta's open foundation architectures specialized for code generation, instruction following, and infilling tasks.
 - [Qwen2.5-Coder](https://github.com/QwenLM/Qwen2.5-Coder) — Leading open-source coding foundation model series (0.5B to 32B) competitive with leading closed models across code generation, completion, and multi-file reasoning.
 - [Qwen3-Coder Preview](https://github.com/QwenLM/Qwen) — Next-generation reasoning and agentic foundation model pre-trained on extended multimodal code corpora with native tool-calling.
 - [StarCoder 2](https://github.com/bigcode-project/starcoder2) — Open, transparently trained code models (3B, 7B, 15B) curated by BigCode under permissive licenses.
+
+#### 💻 Exact GPU VRAM to Local Coding Model Cheat Sheet
+
+Match your physical GPU hardware to the largest model that fits fully in VRAM for zero-offload token generation:
+
+| Available VRAM | Target Hardware | Recommended Coding Model | Model Footprint | Active Context | 1-Click Terminal Command |
+| :--- | :--- | :--- | :---: | :---: | :--- |
+| **8 GB VRAM** | RTX 4060, 3070, Apple M1/M2/M3 (16GB RAM) | **Qwen 2.5 Coder 7B** (Q4_K_M) | ~4.7 GB | 16K | `ollama run qwen2.5-coder:7b` |
+| **12 GB VRAM** | RTX 4070, RTX 3060 12GB | **Qwen 2.5 Coder 14B** (Q4_K_M) | ~9.0 GB | 32K | `ollama run qwen2.5-coder:14b` |
+| **16 GB VRAM** | RTX 4080, RTX 5080, RTX 4060 Ti 16GB | **Devstral Small 2 (24B)** (Q4_K_M) | ~15.0 GB | 384K | `ollama run devstral-small-2:24b` |
+| **24 GB VRAM** | RTX 3090, RTX 4090, Apple M-Max (32GB+) | **Qwen3-Coder 30B (MoE)** *(Repo-Scale)*<br/>**Qwen 2.5 Coder 32B** *(Single-File SOTA)* | ~19.0 GB<br/>~20.0 GB | 256K<br/>32K | `ollama run qwen3-coder:30b`<br/>`ollama run qwen2.5-coder:32b` |
 
 ### Local Execution Engines (Private & Offline)
 - [llama.cpp](https://github.com/ggerganov/llama.cpp) — High-performance C/C++ inference engine for quantized GGUF models with minimal hardware overhead.
@@ -225,6 +321,40 @@ pip install aider-chat
 cd /path/to/your/project
 aider --model ollama/qwen2.5-coder:14b
 ```
+
+---
+
+## 💸 Token Cost & Free-Tier Survival Guide (Stop Burning $20/Day)
+
+Agentic loops can consume hundreds of thousands of tokens per hour across multi-turn debugging cycles. Use these strategies to code for **$0** or cut API bills by **80%+**:
+
+### 1. Best 100% Free Developer Quotas
+
+| Platform / Tool | Free Quota Allowance | Context Window | Key Advantage |
+| :--- | :--- | :---: | :--- |
+| **Google Antigravity** | Free preview tier during developer beta | Up to 1M | Paired agentic IDE with terminal sandbox execution. |
+| **Gemini CLI** | **60 requests/min** & **1,000 requests/day** free | 1M+ tokens | Reads entire multi-file repositories in a single prompt. |
+| **Google Jules** | **15 free async GitHub tasks/day** | Repo-scale | Handles issue debugging and opens verified PRs in the cloud. |
+| **GitHub Copilot Free** | 2,000 code completions & 50 chat turns/month | Standard | Zero credit card required; integrated directly in VS Code. |
+
+### 2. The 'Architect + Editor' 80% Cost-Cut Pattern
+
+Running frontier reasoning models (o3, Claude 3.7 Sonnet) for every syntax fix burns $10–$25 daily. Instead, configure two-model routing in **Aider**, **Cline**, **Roo Code**, or **OpenCode**:
+
+```mermaid
+flowchart LR
+    Task["Complex User Task"] --> Arch["1. Architect Model<br/>(Claude 3.7 / o3-mini)<br/>• Reasons over architecture<br/>• Writes high-level plan & diff"]
+    Arch --> Edit["2. Editor Model<br/>(DeepSeek-V3 / Qwen3-Coder / Local Ollama)<br/>• Applies exact line search/replace<br/>• Costs ~$0.15 / 1M tokens or $0.00 local"]
+    Edit --> Test["3. Local Test Loop<br/>(pytest / cargo test)"]
+```
+
+- **How to enable in Aider:**
+  ```bash
+  aider --model claude-3-7-sonnet --editor-model deepseek/deepseek-chat
+  ```
+- **Result:** You get frontier reasoning for architectural design, while diff syntax execution runs at ~$0.15/1M tokens (or $0.00 with local Ollama), reducing monthly agent spend by 80%+.
+
+---
 
 ---
 
