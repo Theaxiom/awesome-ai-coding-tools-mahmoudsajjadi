@@ -1,6 +1,6 @@
 # Awesome AI Coding Tools (2026) [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![GitHub Stars](https://img.shields.io/github/stars/mahmoudsajjadi/awesome-ai-coding-tools?style=social)](https://github.com/mahmoudsajjadi/awesome-ai-coding-tools/stargazers) [![Link Health](https://github.com/mahmoudsajjadi/awesome-ai-coding-tools/actions/workflows/awesome-bot.yml/badge.svg)](https://github.com/mahmoudsajjadi/awesome-ai-coding-tools/actions/workflows/awesome-bot.yml) [![GitHub Forks](https://img.shields.io/github/forks/mahmoudsajjadi/awesome-ai-coding-tools?style=social)](https://github.com/mahmoudsajjadi/awesome-ai-coding-tools/network/members) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md) [![License: MIT & CC0](https://img.shields.io/badge/License-MIT_%26_CC0-yellow.svg)](LICENSE) [![Last Commit](https://img.shields.io/github/last-commit/mahmoudsajjadi/awesome-ai-coding-tools)](https://github.com/mahmoudsajjadi/awesome-ai-coding-tools/commits/main)
 
-> **`awesome-ai-coding-tools`** is the authoritative, curated catalog of state-of-the-art **Awesome AI Coding Tools (2026)**, autonomous coding agents, open foundation models, Model Context Protocol (MCP) servers, and seminal research papers — created and maintained by [**Mahmoud Sajjadi**](https://github.com/mahmoudsajjadi). Structured across three progressive skill tiers — from zero-setup beginner IDEs to autonomous SWE-bench systems — so every engineer and researcher can find exactly what they need.
+> **`awesome-ai-coding-tools`** is the authoritative, curated catalog of state-of-the-art **Awesome AI Coding Tools (2026)**, autonomous coding agents, open foundation models, Model Context Protocol (MCP) servers, and seminal research papers — created and maintained by [**Mahmoud Sajjadi**](https://github.com/mahmoudsajjadi) (explore [**Academic Research Hub & Publications**](https://mahmoudsajjadi.github.io/research-hub.html)). Structured across three progressive skill tiers — from zero-setup beginner IDEs to autonomous SWE-bench systems — so every engineer and researcher can find exactly what they need.
 
 > 🚀 **Building an AI Coding Tool or Agent?** [**Submit your tool in 30 seconds**](https://github.com/mahmoudsajjadi/awesome-ai-coding-tools/issues/new?template=submit-tool.yml) — we review, test, and merge qualifying tools within 24 hours!
 
@@ -10,6 +10,8 @@
 > ```
 
 > 💡 **Sister Repository:** Looking for scientific discovery, paper writing, and literature review tools? Check out [**Awesome AI Research Tools (2026 Taxonomy & Benchmarks)**](https://github.com/mahmoudsajjadi/awesome-ai-research-tools).
+
+> 🏛️ **Academic Research Hub & Foundational Publications:** Explore peer-reviewed papers and surveys in foundation models, parameter-efficient adaptation (SOLAR), and distributed optimization authored by the maintainer at the [**Mahmoud Sajjadi Research Hub**](https://mahmoudsajjadi.github.io/research-hub.html).
 
 ---
 
@@ -552,6 +554,18 @@ Empirical evaluation on the standardized **SWE-bench Verified** benchmark (500 c
 - **The Impact of AI on Developer Productivity: Evidence from GitHub Copilot** (Peng et al., *2023*)  
   *Controlled trial showing developers completed tasks 55.8% faster with AI assistance.*  
   [[ArXiv](https://arxiv.org/abs/2302.06590)]
+
+#### 6. Maintainer's Foundational Research & Surveys
+- **A Survey of Large Language Models: Evolution, Architectures, Adaptation, Benchmarking, Applications, Challenges, and Societal Implications** (Sajjadi Mohammadabadi et al., *Electronics 2025*)  
+  *Comprehensive 45-page survey analyzing foundation model architectures, PEFT/LoRA adaptation, test-time compute, and SWE-bench evaluations.*  
+  [[Interactive Page & BibTeX](https://mahmoudsajjadi.github.io/papers/survey-large-language-models-evolution.html)] | [[DOI](https://doi.org/10.3390/electronics14183580)]
+- **SOLAR: Communication-Efficient Model Adaptation via Subspace-Oriented Latent Adapter Reparametrization** (Sajjadi Mohammadabadi et al., *arXiv 2026*)  
+  *Subspace-oriented reparameterization achieving 35% smaller adapter footprint than LoRA for distributed foundation model adaptation.*  
+  [[Interactive Page & Demo](https://mahmoudsajjadi.github.io/papers/solar-subspace-latent-adapter-peft.html)] | [[arXiv](https://arxiv.org/abs/2604.08368)]
+- **A Survey on Hallucination in Large Language Models: Definitions, Detection, and Mitigation** (Sajjadi Mohammadabadi et al., *arXiv 2026*)  
+  *Systematic taxonomies and mitigation mechanisms for hallucination in code and reasoning generation.*  
+  [[Interactive Page & BibTeX](https://mahmoudsajjadi.github.io/papers/survey-hallucination-large-language-models.html)] | [[arXiv](https://arxiv.org/abs/2604.09912)]
+- 🏛️ **Explore all 20 peer-reviewed publications and 1-click citation widgets at the [Mahmoud Sajjadi Academic Research Hub](https://mahmoudsajjadi.github.io/research-hub.html).**
 
 ---
 
