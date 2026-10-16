@@ -13,11 +13,14 @@
   <meta property="og:url" content="https://mahmoudsajjadi.github.io/awesome-ai-coding-tools/">
   <meta property="og:title" content="AI Coding Stack & VRAM Calculator (2026)">
   <meta property="og:description" content="Calculate the exact coding model, quantization, and agent stack for your hardware.">
-  <meta property="og:image" content="https://raw.githubusercontent.com/mahmoudsajjadi/awesome-ai-coding-tools/main/assets/landscape-2026.png">
+  <meta property="og:image" content="https://raw.githubusercontent.com/mahmoudsajjadi/awesome-ai-coding-tools/main/assets/social-card.svg">
+  <meta property="og:image:type" content="image/svg+xml">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="AI Coding Stack & VRAM Calculator (2026)">
   <meta name="twitter:description" content="Calculate the exact coding model, quantization, and agent stack for your hardware.">
-  <meta name="twitter:image" content="https://raw.githubusercontent.com/mahmoudsajjadi/awesome-ai-coding-tools/main/assets/landscape-2026.png">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/mahmoudsajjadi/awesome-ai-coding-tools/main/assets/social-card.svg">
 
   <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
@@ -202,7 +205,23 @@ ollama run qwen2.5-coder:14b
 pip install aider-chat
 aider --model ollama/qwen2.5-coder:14b
       </div>
-      <button class="copy-btn" onclick="copyCode()">Copy Script</button>
+      <div style="display: flex; gap: 0.5rem; margin-top: 0.75rem; flex-wrap: wrap;">
+        <button class="copy-btn" style="position: static;" onclick="copyCode()">📋 Copy Script</button>
+        <button class="copy-btn" style="position: static; background: #238636; color: #fff; border-color: #238636;" onclick="downloadConfig('agents')">📥 Download AGENTS.md</button>
+        <button class="copy-btn" style="position: static; background: #1f6feb; color: #fff; border-color: #1f6feb;" onclick="downloadConfig('cursor')">📥 Download .cursorrules</button>
+        <button class="copy-btn" style="position: static; background: #8957e5; color: #fff; border-color: #8957e5;" onclick="downloadConfig('mcp')">📥 Download mcp_config.json</button>
+      </div>
+    </div>
+
+    <!-- Quick Search / Filter Input -->
+    <div style="margin-top: 2rem; background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem;">
+      <h3 style="color: #fff; font-size: 1.1rem; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+        🔍 Interactive Tool & Model Quick Filter
+      </h3>
+      <input type="text" id="quickFilter" placeholder="Filter tools, models, quantizations (e.g. Qwen, Cursor, Aider, Ollama, 24GB)..." oninput="filterCatalog()" style="width: 100%; background: #0a0c10; border: 1px solid var(--border); color: #fff; padding: 0.65rem 0.85rem; border-radius: 6px; font-size: 0.95rem; outline: none; margin-bottom: 1rem;">
+      <div id="filterResults" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.75rem;">
+        <!-- Populated dynamically via JS -->
+      </div>
     </div>
 
     <div style="margin-top: 2.5rem; background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem;">
@@ -338,7 +357,136 @@ aider --model ollama/qwen2.5-coder:14b
       alert("Script copied to clipboard!");
     }
 
+    const catalogItems = [
+      { name: "Cursor", cat: "Agentic IDE", desc: "VS Code fork with Composer multi-file diffs and indexer.", tags: "cloud sonnet ide" },
+      { name: "Windsurf", cat: "Agentic IDE", desc: "Cascade context flows, real-time index, and tool-use.", tags: "cloud flow ide" },
+      { name: "Zed", cat: "GPU Editor", desc: "High-performance Rust editor with native assistant panel.", tags: "local rust fast" },
+      { name: "PearAI", cat: "Open IDE", desc: "Open-source Cursor alternative powered by Continue.", tags: "open source ide" },
+      { name: "Aider", cat: "CLI Agent", desc: "Terminal git pair programmer with Tree-sitter repo-maps.", tags: "cli git local ollama" },
+      { name: "Claude Code", cat: "CLI Agent", desc: "Anthropic's terminal agent for whole-repo refactoring.", tags: "cli terminal anthropic sonnet" },
+      { name: "Cline / Roo Code", cat: "VS Code Extension", desc: "Autonomous extension with MCP and bash command execution.", tags: "extension mcp vscode" },
+      { name: "Qwen 2.5 Coder 32B", cat: "Open Model", desc: "Frontier open-weight coding LLM (42.1% SWE-bench pass).", tags: "model 24gb ollama local" },
+      { name: "Qwen 2.5 Coder 14B", cat: "Open Model", desc: "Sweet-spot model for 16GB GPUs with 128k context.", tags: "model 16gb ollama local" },
+      { name: "Qwen 2.5 Coder 7B", cat: "Open Model", desc: "Ultra-fast low-latency code completion for 8GB VRAM.", tags: "model 8gb ollama local" },
+      { name: "DeepSeek-Coder-V2", cat: "MoE Model", desc: "236B MoE (21B active) supporting 338 programming languages.", tags: "model moe 24gb" },
+      { name: "OpenHands (CodeAct)", cat: "Autonomous Agent", desc: "Dockerized autonomous software engineer (68.2% SOTA).", tags: "autonomous swe-bench docker" },
+      { name: "SWE-agent", cat: "Autonomous Agent", desc: "Princeton benchmark agent using Agent-Computer Interfaces.", tags: "autonomous swe-bench princeton" },
+      { name: "MulmoTerminal", cat: "Fleet Runner", desc: "Browser multi-pane grid running git worktree agents in parallel.", tags: "fleet parallel worktree" },
+      { name: "Ollama", cat: "Runtime Engine", desc: "1-click local LLM runner for macOS, Linux, and Windows.", tags: "engine local llama" },
+      { name: "vLLM", cat: "Serving Engine", desc: "High-throughput PagedAttention inference server for local agent APIs.", tags: "engine server fast" }
+    ];
+
+    function filterCatalog() {
+      const q = (document.getElementById('quickFilter').value || '').toLowerCase().trim();
+      const container = document.getElementById('filterResults');
+      if (!container) return;
+      
+      const filtered = catalogItems.filter(item => {
+        return !q || item.name.toLowerCase().includes(q) || item.cat.toLowerCase().includes(q) || item.desc.toLowerCase().includes(q) || item.tags.toLowerCase().includes(q);
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = '<div style="color:var(--text-muted); font-size:0.9rem; grid-column:1/-1;">No matching tools found. Try searching for "Ollama", "Aider", "Qwen", or "IDE".</div>';
+        return;
+      }
+
+      container.innerHTML = filtered.map(item => `
+        <div style="background:#0a0c10; border:1px solid var(--border); padding:0.85rem; border-radius:6px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.25rem;">
+            <strong style="color:#fff; font-size:0.95rem;">${item.name}</strong>
+            <span style="font-size:0.7rem; background:#161b22; color:var(--accent); padding:0.15rem 0.4rem; border-radius:4px; border:1px solid #30363d;">${item.cat}</span>
+          </div>
+          <div style="font-size:0.82rem; color:var(--text-muted); line-height:1.4;">${item.desc}</div>
+        </div>
+      `).join('');
+    }
+
+    const configsData = {
+      agents: `# AGENTS.md — Universal Agent Context Specification (2026)
+
+## 1. Project Overview & Architecture
+- Stack: TypeScript / Python 3.12 / Rust
+- Structure: Modular services under src/, test suites under tests/.
+
+## 2. Essential Commands (Non-Inferable)
+npm run build        # Build
+npm test -- --bail   # Fast Test Loop (Always run before submitting changes)
+npm run lint         # Lint & Format
+
+## 3. Negative Constraints (What NOT to Do)
+- NEVER commit secrets, API keys, or .env files.
+- NEVER delete or overwrite existing docstrings or test suites.
+- DO NOT use wildcard imports.
+
+## 4. Code Style & Typing Standards
+- All code must pass strict type checking without warnings.
+- Keep functions under 50 lines. Keep files under 300 lines.
+- Commits must adhere to Conventional Commits: feat:, fix:, refactor:, test:, docs:.`,
+
+      cursor: `# Cursor & Windsurf Rules: High-Agency Engineering Standards
+
+You are an expert full-stack software engineer and system architect. Adhere to these rules strictly:
+
+### 1. Code Quality & Modularity
+- Write production-ready, typed code (TypeScript strict, Python mypy --strict).
+- Avoid monolithic files. Functions <= 50 lines, files <= 300 lines.
+- Follow Single Responsibility Principle (SRP).
+
+### 2. Multi-File Edits & Refactoring
+- Preserve backwards compatibility unless instructed otherwise.
+- Never delete existing comments, TODOs, or docstrings.
+- Prefer explicit imports over wildcard imports.
+
+### 3. Anti-Hallucination Gate
+- Never invent API endpoints or package versions.
+- Inspect local virtualenv/node_modules if unsure.
+- Run tests immediately following any edit.`,
+
+      mcp: `{
+  "mcpServers": {
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "<YOUR_TOKEN_HERE>"
+      }
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "."]
+    },
+    "git": {
+      "command": "python",
+      "args": ["-m", "mcp_server_git", "--repository", "."]
+    },
+    "postgres": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-postgres", "postgresql://localhost/mydb"]
+    },
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@context7/mcp-server"]
+    }
+  }
+}`
+    };
+
+    function downloadConfig(type) {
+      const content = configsData[type];
+      const filename = type === 'agents' ? 'AGENTS.md' : (type === 'cursor' ? '.cursorrules' : 'mcp_config.json');
+      const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
     calculate();
+    filterCatalog();
   </script>
 </body>
 </html>
