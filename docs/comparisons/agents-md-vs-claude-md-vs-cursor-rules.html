@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AGENTS.md vs. CLAUDE.md vs. .cursor/rules: The Complete 2026 Agent Context Guide</title>
+  <meta name="description" content="The 2026 specification comparison and production-ready templates for AGENTS.md, CLAUDE.md, and .cursor/rules. Learn the token-saving rule for coding agents.">
+  <link rel="canonical" href="https://mahmoudsajjadi.github.io/awesome-ai-coding-tools/comparisons/agents-md-vs-claude-md-vs-cursor-rules.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="AGENTS.md vs. CLAUDE.md vs. .cursor/rules: 2026 Specification & Templates">
+  <meta property="og:description" content="Universal agent memory standards and lean copy-paste templates under 50 lines.">
+  <meta property="og:url" content="https://mahmoudsajjadi.github.io/awesome-ai-coding-tools/comparisons/agents-md-vs-claude-md-vs-cursor-rules.html">
+  <meta property="og:image" content="https://raw.githubusercontent.com/mahmoudsajjadi/awesome-ai-coding-tools/main/assets/landscape-2026.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AGENTS.md vs. CLAUDE.md vs. .cursor/rules: The Complete 2026 Agent Context Guide & Templates",
+    "author": {
+      "@type": "Person",
+      "name": "Seyed Mahmoud Sajjadi Mohammadabadi",
+      "url": "https://github.com/mahmoudsajjadi"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Awesome AI Coding Tools",
+      "url": "https://github.com/mahmoudsajjadi/awesome-ai-coding-tools"
+    },
+    "datePublished": "2026-10-15",
+    "description": "Comprehensive guide comparing the AGENTS.md universal standard, CLAUDE.md, and scoped .cursor/rules."
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --accent: #58a6ff;
+      --text: #c9d1d9;
+      --text-muted: #8b949e;
+      --code-bg: #0a0c10;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); padding: 2rem 1rem; line-height: 1.6; }
+    .container { max-width: 900px; margin: 0 auto; }
+    .banner { background: #161b22; border: 1px solid #1f6feb; border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .banner a { color: #58a6ff; text-decoration: none; font-weight: 600; }
+    .star-btn { background: #238636; border: 1px solid #2ea043; color: #fff; padding: 0.4rem 0.9rem; border-radius: 6px; text-decoration: none; font-size: 0.85rem; font-weight: 600; }
+    h1 { font-size: 2rem; color: #fff; margin-bottom: 1rem; line-height: 1.3; }
+    h2 { font-size: 1.4rem; color: #fff; margin-top: 2rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+    h3 { font-size: 1.15rem; color: var(--accent); margin-top: 1.5rem; margin-bottom: 0.5rem; }
+    p { margin-bottom: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem; }
+    th, td { border: 1px solid var(--border); padding: 0.75rem 0.9rem; text-align: left; }
+    th { background: #161b22; color: #fff; }
+    tr:nth-child(even) { background: #0e1217; }
+    pre { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 1.25rem; overflow-x: auto; font-family: monospace; color: #7ee787; font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .note-box { background: #161b22; border-left: 4px solid #f0883e; padding: 1.25rem; border-radius: 6px; margin: 1.5rem 0; }
+    footer { text-align: center; margin-top: 3rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); padding-top: 1.5rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="banner">
+      <div>
+        ⭐ <strong>Awesome AI Coding Tools (2026)</strong> — Access production-ready dotfiles and agent templates.
+      </div>
+      <a class="star-btn" href="https://github.com/mahmoudsajjadi/awesome-ai-coding-tools" target="_blank">⭐ Star on GitHub</a>
+    </div>
+
+    <h1>AGENTS.md vs. CLAUDE.md vs. .cursor/rules: The Complete 2026 Agent Context Guide & Templates</h1>
+
+    <p>As engineers move between <strong>Claude Code</strong>, <strong>Cursor</strong>, <strong>Windsurf</strong>, and <strong>Aider</strong>, maintaining duplicate context rules across proprietary config files creates friction. The developer community in 2026 has converged on <strong><code>AGENTS.md</code></strong> as the universal open standard for project memory.</p>
+
+    <h2>1. Specification Comparison</h2>
+    <div style="overflow-x: auto;">
+      <table>
+        <thead>
+          <tr>
+            <th>Specification</th>
+            <th>Primary Scope</th>
+            <th>Supported Agents</th>
+            <th>How It Is Processed</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong><code>AGENTS.md</code></strong></td>
+            <td><strong>Universal Open Standard</strong></td>
+            <td>Claude Code (v2.1.277+), Cursor, Codex CLI, Aider, Windsurf, Zed, OpenCode, Jules</td>
+            <td>Ingested at session initiation as root system instructions. Universal cross-tool format.</td>
+          </tr>
+          <tr>
+            <td><strong><code>CLAUDE.md</code></strong></td>
+            <td>Tool-Specific (Anthropic)</td>
+            <td>Claude Code CLI, Claude Desktop</td>
+            <td>Used for sub-agent tool execution permissions and compact build commands.</td>
+          </tr>
+          <tr>
+            <td><strong><code>.cursor/rules/*.mdc</code></strong></td>
+            <td>Scoped Directory (Cursor)</td>
+            <td>Cursor IDE</td>
+            <td>Triggered dynamically via glob patterns (<code>*.ts</code>, <code>*.py</code>) only when relevant files are edited.</td>
+          </tr>
+          <tr>
+            <td><strong><code>SKILL.md</code></strong></td>
+            <td>Task-Triggered Plugin</td>
+            <td>Antigravity, OpenCode</td>
+            <td>Procedural instructions loaded on-demand when specific user intents fire.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>2. The 2026 Token-Saving Rule</h2>
+    <div class="note-box">
+      <p>⚠️ <strong>Empirical Finding:</strong> Pasting full directory trees into root instruction files increases token spend by 20%+ and degrades agent reasoning by 18%.</p>
+      <p>Modern coding agents already construct Tree-sitter AST maps automatically. Your context files should strictly contain non-inferable build commands, negative constraints (what NOT to do), and commit standards.</p>
+    </div>
+
+    <h2>3. Production-Ready AGENTS.md Template (Under 50 Lines)</h2>
+    <pre><code># AGENTS.md — Universal Agent Context Specification
+
+## 1. Project Overview & Architecture
+- Stack: TypeScript / Node.js (or Python 3.12 / FastAPI)
+- Structure: Modular services under `src/`, test suites under `tests/`.
+
+## 2. Essential Commands (Non-Inferable)
+- Build: `npm run build`
+- Fast Test Loop: `npm test -- --bail`
+- Lint & Format: `npm run lint`
+
+## 3. Negative Constraints (What NOT to Do)
+- NEVER commit secrets, API keys, or `.env` files.
+- NEVER delete or overwrite existing docstrings or test suites without explicit instructions.
+- DO NOT use wildcard imports (`from module import *`).
+- DO NOT add external dependencies for tasks solvable with standard libraries.
+
+## 4. Code Style & Typing Standards
+- All code must pass strict type checking without warnings (`strict: true`).
+- Keep functions modular and under 50 lines. Keep files under 300 lines.
+- Commits must adhere to Conventional Commits: `feat:`, `fix:`, `refactor:`, `test:`, `docs:`.</code></pre>
+
+    <div class="banner" style="margin-top: 3rem;">
+      <div>
+        ⭐ <strong>Found this template useful?</strong> Star our repository on GitHub!
+      </div>
+      <a class="star-btn" href="https://github.com/mahmoudsajjadi/awesome-ai-coding-tools" target="_blank">⭐ Star on GitHub</a>
+    </div>
+
+    <footer>
+      <p>
+        Part of the <a href="https://github.com/mahmoudsajjadi/awesome-ai-coding-tools">Awesome AI Coding Tools</a> Project • 
+        Curated by <a href="https://github.com/mahmoudsajjadi">Mahmoud Sajjadi</a> • 
+        <a href="https://mahmoudsajjadi.github.io/awesome-ai-coding-tools/">Interactive VRAM Calculator</a>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Best Local Coding LLMs for 8GB, 12GB, 16GB, and 24GB VRAM (Ollama & vLLM 2026 Guide)</title>
+  <meta name="description" content="Exact hardware VRAM to local coding model sizing lookup table: Qwen 2.5 Coder, Devstral Small 2, DeepSeek-R1, and 1-click Ollama launch commands.">
+  <link rel="canonical" href="https://mahmoudsajjadi.github.io/awesome-ai-coding-tools/comparisons/best-local-coding-llm-8gb-16gb-24gb-vram-ollama.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Best Local Coding LLMs for 8GB, 12GB, 16GB, and 24GB VRAM (2026 Benchmark)">
+  <meta property="og:description" content="Calculate the exact coding model and quantization for your physical GPU hardware.">
+  <meta property="og:url" content="https://mahmoudsajjadi.github.io/awesome-ai-coding-tools/comparisons/best-local-coding-llm-8gb-16gb-24gb-vram-ollama.html">
+  <meta property="og:image" content="https://raw.githubusercontent.com/mahmoudsajjadi/awesome-ai-coding-tools/main/assets/landscape-2026.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Best Local Coding LLMs for 8GB, 12GB, 16GB, and 24GB VRAM (Ollama & vLLM 2026 Benchmark Guide)",
+    "author": {
+      "@type": "Person",
+      "name": "Seyed Mahmoud Sajjadi Mohammadabadi",
+      "url": "https://github.com/mahmoudsajjadi"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Awesome AI Coding Tools",
+      "url": "https://github.com/mahmoudsajjadi/awesome-ai-coding-tools"
+    },
+    "datePublished": "2026-10-15",
+    "description": "Hardware VRAM sizing lookup table for running local coding foundation models with Ollama, llama.cpp, and vLLM."
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --accent: #58a6ff;
+      --text: #c9d1d9;
+      --text-muted: #8b949e;
+      --code-bg: #0a0c10;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); padding: 2rem 1rem; line-height: 1.6; }
+    .container { max-width: 900px; margin: 0 auto; }
+    .banner { background: #161b22; border: 1px solid #1f6feb; border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .banner a { color: #58a6ff; text-decoration: none; font-weight: 600; }
+    .star-btn { background: #238636; border: 1px solid #2ea043; color: #fff; padding: 0.4rem 0.9rem; border-radius: 6px; text-decoration: none; font-size: 0.85rem; font-weight: 600; }
+    h1 { font-size: 2rem; color: #fff; margin-bottom: 1rem; line-height: 1.3; }
+    h2 { font-size: 1.4rem; color: #fff; margin-top: 2rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+    h3 { font-size: 1.15rem; color: var(--accent); margin-top: 1.5rem; margin-bottom: 0.5rem; }
+    p { margin-bottom: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem; }
+    th, td { border: 1px solid var(--border); padding: 0.75rem 0.9rem; text-align: left; }
+    th { background: #161b22; color: #fff; }
+    tr:nth-child(even) { background: #0e1217; }
+    pre { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 1rem; overflow-x: auto; font-family: monospace; color: #7ee787; margin-bottom: 1.5rem; }
+    footer { text-align: center; margin-top: 3rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); padding-top: 1.5rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="banner">
+      <div>
+        ⭐ <strong>Awesome AI Coding Tools (2026)</strong> — Explore local models, agent dotfiles, and benchmarks.
+      </div>
+      <a class="star-btn" href="https://github.com/mahmoudsajjadi/awesome-ai-coding-tools" target="_blank">⭐ Star on GitHub</a>
+    </div>
+
+    <h1>Best Local Coding LLMs for 8GB, 12GB, 16GB, and 24GB VRAM (Ollama & vLLM 2026 Benchmark Guide)</h1>
+
+    <p>Running code LLMs locally guarantees <strong>100% data privacy</strong>, zero cloud API costs, and air-gapped security. However, selecting the right model requires matching the model parameters and quantization format to your physical GPU VRAM. Loading a model that exceeds VRAM causes CPU memory offloading, dropping token generation speeds from 50+ tokens/sec to unworkable single digits.</p>
+
+    <h2>1. Physical Hardware VRAM to Model Sizing Table</h2>
+    <div style="overflow-x: auto;">
+      <table>
+        <thead>
+          <tr>
+            <th>GPU Hardware</th>
+            <th>VRAM</th>
+            <th>Optimal Model</th>
+            <th>Quantization</th>
+            <th>Footprint</th>
+            <th>Context</th>
+            <th>1-Click Launch Command</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>RTX 4060, RTX 3070, Apple M 16GB</strong></td>
+            <td><strong>8 GB</strong></td>
+            <td><strong>Qwen 2.5 Coder 7B</strong></td>
+            <td>Q4_K_M</td>
+            <td>4.7 GB</td>
+            <td>16K</td>
+            <td><code>ollama run qwen2.5-coder:7b</code></td>
+          </tr>
+          <tr>
+            <td><strong>RTX 4070, RTX 3060 12GB</strong></td>
+            <td><strong>12 GB</strong></td>
+            <td><strong>Qwen 2.5 Coder 14B</strong></td>
+            <td>Q4_K_M</td>
+            <td>9.0 GB</td>
+            <td>32K</td>
+            <td><code>ollama run qwen2.5-coder:14b</code></td>
+          </tr>
+          <tr>
+            <td><strong>RTX 4080, RTX 5080, 4060 Ti 16GB</strong></td>
+            <td><strong>16 GB</strong></td>
+            <td><strong>Devstral Small 2 (24B)</strong></td>
+            <td>Q4_K_M</td>
+            <td>15.0 GB</td>
+            <td>384K</td>
+            <td><code>ollama run devstral-small-2:24b</code></td>
+          </tr>
+          <tr>
+            <td><strong>RTX 3090, RTX 4090, Apple M-Max 32GB+</strong></td>
+            <td><strong>24 GB</strong></td>
+            <td><strong>Qwen3-Coder 30B (MoE)</strong><br/><strong>Qwen 2.5 Coder 32B</strong></td>
+            <td>Q4_K_M</td>
+            <td>19.0 GB<br/>20.0 GB</td>
+            <td>256K<br/>32K</td>
+            <td><code>ollama run qwen3-coder:30b</code><br/><code>ollama run qwen2.5-coder:32b</code></td>
+          </tr>
+          <tr>
+            <td><strong>Apple Silicon Ultra (64GB - 128GB Unified)</strong></td>
+            <td><strong>64GB+</strong></td>
+            <td><strong>DeepSeek-R1 / V3 (671B MoE)</strong></td>
+            <td>Q4_K_M</td>
+            <td>~40-70 GB</td>
+            <td>64K</td>
+            <td><code>ollama run deepseek-r1:70b</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>2. In-Depth Model Evaluation</h2>
+
+    <h3>8 GB VRAM: Qwen 2.5 Coder 7B</h3>
+    <p>Excellent at single-function generation, unit test creation, and concise bug fixes. Lightweight footprint fits on virtually any modern developer laptop.</p>
+
+    <h3>12 GB VRAM: Qwen 2.5 Coder 14B</h3>
+    <p>The undisputed sweet spot for mid-tier GPUs. Achieves near-frontier level code synthesis for daily development tasks and refactoring loops.</p>
+
+    <h3>16 GB VRAM: Devstral Small 2 (24B)</h3>
+    <p>Engineered by Mistral with a massive 384K context window. Allows feeding entire repositories and complex multi-file test tracebacks simultaneously.</p>
+
+    <h3>24 GB VRAM: Qwen3-Coder 30B (MoE) & Qwen 2.5 Coder 32B</h3>
+    <p>Matches commercial API models on SWE-bench and HumanEval benchmarks. Operates flawlessly with <strong>Aider</strong> in local architect mode with zero cloud telemetry.</p>
+
+    <h2>3. How to Pair with Local Coding Agents</h2>
+    <pre><code># 1. Start model in Ollama
+ollama run qwen2.5-coder:14b
+
+# 2. Run Aider targeting local Ollama endpoint
+aider --model ollama/qwen2.5-coder:14b</code></pre>
+
+    <div class="banner" style="margin-top: 3rem;">
+      <div>
+        ⭐ <strong>Found this sizing guide helpful?</strong> Star our repository on GitHub!
+      </div>
+      <a class="star-btn" href="https://github.com/mahmoudsajjadi/awesome-ai-coding-tools" target="_blank">⭐ Star on GitHub</a>
+    </div>
+
+    <footer>
+      <p>
+        Part of the <a href="https://github.com/mahmoudsajjadi/awesome-ai-coding-tools">Awesome AI Coding Tools</a> Project • 
+        Curated by <a href="https://github.com/mahmoudsajjadi">Mahmoud Sajjadi</a> • 
+        <a href="https://mahmoudsajjadi.github.io/awesome-ai-coding-tools/">Interactive VRAM Calculator</a>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
