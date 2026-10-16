@@ -1,15 +1,15 @@
 # Awesome AI Coding Tools (2026) [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![GitHub Stars](https://img.shields.io/github/stars/mahmoudsajjadi/awesome-ai-coding-tools?style=social)](https://github.com/mahmoudsajjadi/awesome-ai-coding-tools/stargazers) [![GitHub Forks](https://img.shields.io/github/forks/mahmoudsajjadi/awesome-ai-coding-tools?style=social)](https://github.com/mahmoudsajjadi/awesome-ai-coding-tools/network/members) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md) [![License: MIT & CC0](https://img.shields.io/badge/License-MIT_%26_CC0-yellow.svg)](LICENSE) [![Last Commit](https://img.shields.io/github/last-commit/mahmoudsajjadi/awesome-ai-coding-tools)](https://github.com/mahmoudsajjadi/awesome-ai-coding-tools/commits/main)
 
-> **`awesome-ai-coding-tools`** is the authoritative, curated catalog of state-of-the-art **Awesome AI Coding Tools (2026)**, autonomous coding agents, open foundation models, Model Context Protocol (MCP) servers, and seminal research papers. Structured across three progressive skill tiers — from zero-setup beginner IDEs to autonomous SWE-bench systems — so every engineer and researcher can find exactly what they need.
+> **`awesome-ai-coding-tools`** is the authoritative, curated catalog of state-of-the-art **Awesome AI Coding Tools (2026)**, autonomous coding agents, open foundation models, Model Context Protocol (MCP) servers, and seminal research papers — created and maintained by [**Mahmoud Sajjadi**](https://github.com/mahmoudsajjadi). Structured across three progressive skill tiers — from zero-setup beginner IDEs to autonomous SWE-bench systems — so every engineer and researcher can find exactly what they need.
 
 > 🚀 **Building an AI Coding Tool or Agent?** [**Submit your tool in 30 seconds**](https://github.com/mahmoudsajjadi/awesome-ai-coding-tools/issues/new?template=submit-tool.yml) — we review, test, and merge qualifying tools within 24 hours!
 
-> 🔌 **Query this Repository via MCP (GitMCP):** Connect this catalog directly into Claude Code, Cursor, or Antigravity as an active Model Context Protocol server:
+> 🔌 **Query this Repository via MCP (GitMCP):** Connect this catalog directly into your coding environment as an active Model Context Protocol server:
 > ```text
 > https://gitmcp.io/mahmoudsajjadi/awesome-ai-coding-tools
 > ```
 
-> 💡 **Sister Repository:** Looking for scientific discovery, paper writing, and literature review tools? Check out [Awesome AI Research Tools](https://github.com/mahmoudsajjadi/awesome-ai-research-tools).
+> 💡 **Sister Repository:** Looking for scientific discovery, paper writing, and literature review tools? Check out [**Awesome AI Research Tools (2026 Taxonomy & Benchmarks)**](https://github.com/mahmoudsajjadi/awesome-ai-research-tools).
 
 ---
 
