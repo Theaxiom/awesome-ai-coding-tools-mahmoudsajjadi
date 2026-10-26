@@ -298,6 +298,7 @@ Match your physical GPU hardware to the largest model that fits fully in VRAM fo
 - [vLLM](https://github.com/vllm-project/vllm) â€” High-throughput, memory-efficient LLM serving engine featuring PagedAttention for production local deployments.
 
 ### Automated Testing, QA & Code Review
+- [agent-qa](https://vostride.com) — CLI and MCP agent for natural-language Web, Android and iOS testing, with persistent memory and validated self-improvement. Supports local models through OpenAI-compatible endpoints.
 - [CodeRabbit](https://coderabbit.ai/) â€” AI-driven pull request reviewer providing line-by-line feedback, sequence diagrams, and security vulnerability checks.
 - [Cover-Agent](https://github.com/Codium-ai/cover-agent) â€” Open-source generative testing tool that iteratively generates unit tests until target coverage is met.
 - [Keploy](https://github.com/keploy/keploy) â€” Open-source zero-code test generator that captures real network calls and creates automated regression test suites.
