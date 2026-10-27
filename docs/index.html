@@ -378,7 +378,8 @@ aider --model ollama/qwen2.5-coder:14b
       { name: "SWE-agent", cat: "Autonomous Agent", desc: "Princeton benchmark agent using Agent-Computer Interfaces.", tags: "autonomous swe-bench princeton" },
       { name: "MulmoTerminal", cat: "Fleet Runner", desc: "Browser multi-pane grid running git worktree agents in parallel.", tags: "fleet parallel worktree" },
       { name: "Ollama", cat: "Runtime Engine", desc: "1-click local LLM runner for macOS, Linux, and Windows.", tags: "engine local llama" },
-      { name: "vLLM", cat: "Serving Engine", desc: "High-throughput PagedAttention inference server for local agent APIs.", tags: "engine server fast" }
+      { name: "vLLM", cat: "Serving Engine", desc: "High-throughput PagedAttention inference server for local agent APIs.", tags: "engine server fast" },
+      { name: "agent-qa", cat: "Testing & QA", desc: "CLI/MCP natural-language app tests with persistent memory and validated self-improvement.", tags: "qa testing web android ios cli mcp local", url: "https://vostride.com" }
     ];
 
     function filterCatalog() {
@@ -398,7 +399,7 @@ aider --model ollama/qwen2.5-coder:14b
       container.innerHTML = filtered.map(item => `
         <div style="background:#0a0c10; border:1px solid var(--border); padding:0.85rem; border-radius:6px;">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.25rem;">
-            <strong style="color:#fff; font-size:0.95rem;">${item.name}</strong>
+            <strong style="color:#fff; font-size:0.95rem;">${item.url ? `<a href="${item.url}" target="_blank" rel="noopener noreferrer" style="color:inherit;">${item.name}</a>` : item.name}</strong>
             <span style="font-size:0.7rem; background:#161b22; color:var(--accent); padding:0.15rem 0.4rem; border-radius:4px; border:1px solid #30363d;">${item.cat}</span>
           </div>
           <div style="font-size:0.82rem; color:var(--text-muted); line-height:1.4;">${item.desc}</div>
